@@ -1,0 +1,81 @@
+.container{
+    width: 1140px;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.cartes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.carte{
+    width: 1140;
+    height: 100px;
+}
+
+.carte-sucre{
+    width:20rem;
+    box-shadow: 0 0 0.2rem black;
+    padding: 20px;
+    border-radius: .5rem;
+    background-color: var(--color-bg-card-sucree);
+}
+
+.carte-sale{
+    width: 20rem;
+    box-shadow: 0 0 .2rem black;
+    padding: 20px; 
+    border-radius: .5rem;
+    background-color: var(--color-bg-card-salee);
+}
+
+.carte-sale:hover{
+    box-shadow: 0 0 .5rem black;
+    cursor: pointer;
+}
+
+.carte-sucre:hover{
+    box-shadow: 0 0 .5rem black;
+    cursor: pointer;
+}
+
+.tarte{
+    padding: 1rem;
+}
+
+.sucre{
+    padding: 1em;
+}
+
+.carte-sucre h3{
+    text-align: center;
+}
+
+.carte-sale h3{
+    text-align: center;
+}
+
+.field {
+margin-bottom: 1.5rem;
+}
+
+#nom, #prenom, #email, #message {
+    margin-top: .3rem;
+}
+
+.row{
+    display: flex;
+    justify-content: space-around;
+}
+
+#message{
+    width: 500px;
+    height: 165px
+}
+
+.sucre{
+    border-radius: .5rem;
+}

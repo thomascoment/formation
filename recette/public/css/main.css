@@ -1,0 +1,19 @@
+@import url(font.css);
+
+#main .titre{
+    font-family: 'titre';
+    font-size: var(--typo-titre-page);
+    font-weight: 600;
+}
+
+#main .chapo{
+    font-family: 'texte';
+    font-size: var(--typo-corps-de-texte)
+}
+
+.titre-section{
+    font-family: 'titre';
+    font-size: var(--typo-titre-section);
+    padding-top: 1rem;
+}
+

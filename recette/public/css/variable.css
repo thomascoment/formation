@@ -1,0 +1,18 @@
+:root{
+    --color-text: #3e4751;
+    --color-bg-page: #fdf7f2;
+    --color-bg-header-footer: #fff;
+    --color-sucree: #d42816;
+    --color-salee: #637f43;
+    --color-bg-card-sucree: #fce4ec;
+    --color-bg-card-salee: #eef7e8;
+    
+
+    --typo-nav: 1.125rem;
+    --typo-logo: 1.25rem;
+    --typo-titre-page: 2rem;
+    --typo-titre-section: 1.625rem;
+    --typo-titre-carte: 1.25rem;
+    --typo-corps-de-texte: 1rem;
+
+}

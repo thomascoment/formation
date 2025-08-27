@@ -1,0 +1,56 @@
+@import url(font.css);
+
+:root {
+    font-size: 16px;
+}
+
+html,body{
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-bg-page);
+    margin: 0;
+    padding: 0;
+    color: var(--color-text);
+
+
+    font-family: 'texte', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#main{
+    flex-grow: 1;
+    width: 1150px;
+    margin: auto;
+}
+
+ul.menu {
+    display: flex;
+    gap: 1rem;
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu a {
+    text-decoration: none;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.titre{
+    margin-top: 100px;
+}
+
+@media screen and (max-width: 1200px) {
+    :root {
+        font-size: 14px;
+    }
+}
+
+.formulaire{
+    background-color: none;
+}
