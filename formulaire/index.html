@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les formulaires</title>
+    <style>
+        .field{
+            margin-bottom: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <form action="index.php" method="post">
+            <div class="fields">
+                <div class="field">
+                    <label for="lastname">Nom</label><br>
+                    <input type="text" name="lastname" id="lastname">
+                </div>
+                <div class="field">
+                    <label for="firstname">Prénom</label><br>
+                    <input type="text" name="firstname" id="firstname">
+                </div>
+                <div class="field">
+                    <label for="email">Adresse Mail</label><br>
+                    <input type="text" name="email" id="email">
+                </div>
+                <div class="field">
+                    <label for="password">Mot de passe</label><br>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div class="confirm">
+                    <label for="confirm">Confirmation</label><br>
+                    <input type="password" name="confirm" id="confirm">
+                </div>
+                <div class="field">
+                    <input type="checkbox" name="showPassword" id="showPassword">
+                    <label for="showPassword">Afficher le mot de passe</label>
+                </div>
+                
+            </div>
+            <div class="submit">
+                <input type="submit" value="Envoyer">
+            </div>
+        </form>
+    </main>
+
+
+
+    <script>
+        document.getElementById('firstname').addEventListener("focus", function (){
+            this.style.border = "unset"
+            this.style.border = "2px solid red"
+        })
+        document.getElementById('firstname').addEventListener('blur', function(){
+            this.style.border = "1px solid #333"
+            console.log(this.value)
+        })
+
+        document.getElementById('password').addEventListener("blur", function(){
+            if(this.value.length < 12){
+
+                document.querySelector('[for=password]').style.color = "red"
+            } else {
+                document.querySelector('[for=password]').style.color = "green"
+            }
+        })
+
+        document.getElementById('showPassword').addEventListener('change', function(){
+            if(this.checked){
+                document.getElementById('password').setAttribute('type', 'text')
+            } else {
+                document.getElementById('password').setAttribute('type', 'password')
+            }
+        })
+
+        document.getElementById('showPassword').addEventListener('change', function(){
+            if(this.checked){
+                document.getElementById('confirm').setAttribute('type', 'text')
+            } else {
+                document.getElementById('confirm').setAttribute('type', 'password')
+            }
+        })
+
+        document.querySelector('form').addEventListener('submit', function(e){
+            
+            
+            if( e.target.password.value === e.target.confirm.value){
+                alert('Formulaire envoyé')
+            } else {
+                e.preventDefault()
+                const confirmlabelElt = document.querySelector('[for=confirm]')
+                confirmlabelElt.textContent += " - Mot de passe pas identique"
+                confirmlabelElt.style.color = 'red'
+            }
+        })
+
+        const emailElt = document.getElementById("email")
+        emailElt.addEventListener('focus', function(){
+            const msgElt = document.createElement('div')
+            msgElt.setAttribute('id', 'message')
+            msgElt.textContent = " Un mail de confirmation sera envoyé à cette adresse"
+            const labelElt = document.querySelector('[for="email"]')
+            labelElt.appendChild(msgElt)
+        })
+
+        emailElt.addEventListener('blur', function(){
+            document.getElementById('message')?.remove();
+        })
+    </script>
+</body>
+</html
