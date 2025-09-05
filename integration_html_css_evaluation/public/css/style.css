@@ -1,0 +1,310 @@
+:root {
+    font-size: 16px;
+
+    h1 {
+        font-size: 1.31rem;
+    }
+}
+
+body {
+    margin: 0;
+}
+
+#main {
+    background-color: #f0f0f0;
+}
+
+@font-face {
+    font-family: 'Monserrat';
+    src: url(/public/font/Montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url(/public/font/Open_Sans/static/OpenSans-Regular.ttf);
+}
+
+#logo-afpa {
+    height: 64px;
+    margin: 1rem;
+    margin-top: 1.5rem;
+}
+
+#burger {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+
+    #button {
+        color: #44a33d;
+    }
+}
+
+.menu .active a {
+    background-color: #44a33d;
+}
+
+.menu {
+    padding: 0;
+    margin-top: 0;
+}
+
+.menu a {
+    list-style-type: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #24272b;
+    background-color: #86ba33;
+    height: 40px;
+    font-size: 1.125rem;
+    border-bottom: solid .2rem #f0f0f0;
+}
+
+.fil-arianne {
+    display: flex;
+    padding-left: 1rem;
+    gap: .3rem;
+
+    a {
+        color: #24272b;
+        text-decoration: none;
+    }
+}
+
+.texte-arianne a {
+    color: #e2007d;
+}
+
+.chevron {
+    display: flex;
+    align-items: center;
+}
+
+/******************************MAIN*************************/
+
+.container {
+    margin: auto;
+    background-color: #f0f0f0;
+    height: 2000px;
+}
+
+.chapo {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 12rem;
+
+    h1,
+    p {
+        padding-left: .8rem;
+    }
+}
+
+.cartes-apprenants {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    a {
+        color: #e2007d;
+    }
+
+
+}
+
+.carte {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: solid .5rem #f0f0f0;
+
+    .photo {
+        height: 6rem;
+    }
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: 1rem;
+    }
+}
+
+.photo-texte {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-left: 1rem;
+    gap: 1rem;
+}
+
+.icones {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.linkedin a {
+    display: flex;
+    text-decoration: none;
+    gap: .3rem;
+    align-items: center;
+
+    .icone-linkedin {
+        height: 18px;
+    }
+}
+
+.oeil a {
+    display: flex;
+    color: #e2007d;
+    text-decoration: none;
+    gap: .3rem;
+    align-items: center;
+
+    .icone-oeil {
+        height: 18px;
+    }
+}
+
+/************************FOOTER**************************/
+
+.logo-footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f0f0f0;
+    border-bottom: solid .7rem #f0f0f0;
+}
+
+.logo-afpa,
+.logo-region {
+    height: 48px;
+}
+
+.mentions-legales-icones {
+    display: flex;
+    justify-content: space-around;
+    background-color: #86ba33;
+
+    .logo-facebook {
+        height: 18px;
+    }
+}
+
+.mentions {
+    display: flex;
+    gap: 1rem;
+}
+
+.icones-footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .logo-linkedin {
+        height: 18px;
+    }
+}
+
+.chapo .hidden {
+    display: none;
+}
+
+.fil-arianne .hidden {
+    display: none;
+}
+
+.carte-cache{
+    display: none;
+}
+
+@media screen and (max-width: 321px) {
+    .hidden {
+        display: none;
+    }
+}
+
+@media (min-width: 321px) {
+    #burger {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width : 700px) {
+    .menu {
+        display: flex;
+        justify-content: start;
+        list-style-type: none;
+        gap: 3rem;
+        background-color: #86ba33;
+        padding-left: 1.5rem;
+    }
+
+    .active{
+        width: 95px;
+    }
+
+    .menu a {
+        display: flex;
+        list-style-type: none;
+        border-bottom: none;
+    }
+
+    .chapo {
+        height: 10rem;
+    }
+
+    .carte {
+        width: 20rem;
+        height: 180px;
+    }
+
+    .container {
+        width: 700px;
+        height: 1000px;
+    }
+
+    .cartes-apprenants {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% -20px);
+
+    }
+}
+
+@media screen and (min-width : 1920px){
+    
+    .menu{
+        padding-left: 470px;
+    }
+
+    #logo-afpa{
+        margin-left: 0;
+        padding-left: 470px;
+    }
+
+    .fil-arianne{
+        padding-left: 470px;
+    }
+
+    .container{
+        margin: auto;
+        width: 1000px;
+        height: 900px;
+    }
+    
+    p{
+        width: 550px;
+    }
+
+    .carte-cache{
+        display: flex;
+    }
+    
+    
+}
