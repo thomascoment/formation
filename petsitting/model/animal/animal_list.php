@@ -8,6 +8,6 @@ DATE_FORMAT(animal.birthday, \'%d/%m/%Y\') AS birthday, species.id AS species_id
 LEFT JOIN species ON species.id = animal.species_id';
 
 $q = $pdo->query($sql);
-$animal = $q->fetchAll();
+$animals = $q->fetchAll();
 
-pre_print_r($animal);
+pre_print_r($animals);
