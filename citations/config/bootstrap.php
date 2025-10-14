@@ -1,18 +1,34 @@
 <?php
 
-if(DEBUG) {
-    ini_set('display_errors', '1');
-    ini_set('display_startupt_errors', '1');
-    error_reporting(E_ALL);
+/**
+ * Bootstrap du projet
+ */
+
+if (DEBUG) {
+    $params = [
+        'displayErrorReporting' => E_ALL,
+        'startupErrors' => 1,
+        'errors' => 1
+    ];
 } else {
-    ini_set('display_errors', '0');
-    ini_set('display_startupt_errors', '0');
-    error_reporting(0);
+    $params = [
+        'displayErrorReporting' => 0,
+        'startupErrors' => 0,
+        'errors' => 0
+    ];
 }
 
-set_exception_handler(function (\Throwable $e):void {
+ini_set('display_errors', (string)$params['errors']);
+ini_set('display_startup_errors', (string)$params['startupErrors']);
+error_reporting((int)$params['displayErrorReporting']);
+
+
+/**
+ * Gestion des exceptions
+ */
+set_exception_handler(function (\Throwable $e): void {
     $msgError = 'Une erreur est survenue : ';
-    if(DEBUG){
+    if (DEBUG) {
         $msgError .= '<br>' . $e->getMessage() . 'dans le fichier ' . $e->getMessage() . ' à la ligne ' . $e->getLine();
     }
 

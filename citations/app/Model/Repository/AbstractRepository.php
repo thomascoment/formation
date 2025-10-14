@@ -8,19 +8,37 @@ use App\Model\Entity\AbstractEntity;
 use PDO;
 use PDOStatement;
 
+/**
+ * Calsse abstraite représentant un repository
+ * Gère les opératons de base sur un table
+ */
 abstract class AbstractRepository
 {
     protected PDO $pdo;
+
+    /**
+     * Nom de la table associé au repository
+     * @var string
+     */
     protected string $table;
+
+    /**
+     * Nom de l'entité associé au repository
+     * @var string
+     */
     protected string $entity;
 
+    /**
+     * Constructeur de la class AbstractRepository
+     * @param \PDO $pdo à injecter
+     */
     public function __construct(PDO $pdo)
     {
         $this->pdo = $pdo;
     }
 
     /**
-     * Prépare au beaoin et exécute une requête SQL avec des paramètres.
+     * Prépare au besoin et exécute une requête SQL avec des paramètres.
      * @param string $sql la requete SQL
      * @param array $params tableau associatif de paramètres à lier à la requête
      * @return bool|PDOStatement
@@ -38,9 +56,9 @@ abstract class AbstractRepository
     }
 
     /**
-     * Retourne la liste des especes
+     * Retourne la liste des entités
      *
-     * @return array litse des entités d'une table
+     * @return array liste des entités d'une table
      */
     public function findAll(): array
     {
@@ -54,6 +72,7 @@ abstract class AbstractRepository
             $fqcn = 'App\Model\Entity\\' . $this->entity;
             if (class_exists($fqcn)) {
                 $entity = new $fqcn();
+                
                 $entity->hydrate($this->normalizeRow($row));
                 $entities[] = $entity;
             } else {
@@ -82,7 +101,7 @@ abstract class AbstractRepository
             $fqcn = 'App\Model\Entity\\' . $this->entity;
             if (class_exists($fqcn)) {
                 $entity = new $fqcn();
-                $entity->hydrate($data);
+                $entity->hydrate($this->normalizeRow($data));
             }
             return $entity;
         } else {
@@ -129,6 +148,12 @@ abstract class AbstractRepository
         return $q->execute();
     }
 
+
+    /**
+     * Normalise une ligne de résulutat de requête
+     * @param array $row 
+     * @return array un tableau assciatif avec les clés en CamelCase et les date en DateTime
+     */
     protected function normalizeRow(array $row): array
     {
         $newRow = [];

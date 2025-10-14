@@ -39,7 +39,7 @@ class Author extends AbstractEntity
      * @param string $author
      * @return self
      */
-    public function setAuthor(string $author): self
+    public function setAuthor(?string $author): self
     {
         $this->author = $author;
         return $this;

@@ -42,7 +42,7 @@
                                 class="bi bi-eye"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/users/logout" title="Se déconnecter"><i
+                        <a class="nav-link" href="/logout" title="Se déconnecter"><i
                                 class="bi bi-box-arrow-right"></i></a>
                     </li>
                 </ul>
@@ -50,6 +50,14 @@
             </div>
         </div>
     </nav>
+
+    <?php if(isset($_SESSION['flash'])) : ?>
+     <div class="container-fluid bg-<?= $_SESSION['flash']['code'] ?> text-white text-center py-2">
+        <?= $_SESSION['flash']['texte'] ?>
+    </div>
+    <?php unset($_SESSION['flash']); ?>
+    <?php endif; ?>
+
     <div class="container my-5">
         <h1 class="title mb-4">
             <?= $pageTitle ?>

@@ -2,10 +2,22 @@
 
 namespace App\Database;
 
+
+/**
+ * Singleton pour la connexion PDO
+ */
 class PDOSingleton
 {
+    /**
+     *  Une instance de la connexion PDO
+     * @var 
+     */
     static ?\PDO $instance = null;
 
+    /**
+     * Retourne l'instance unique de PDO
+     * @return \PDO|null
+     */
     public static function getInstance(): \PDO
     {
         if(self::$instance === null) {
