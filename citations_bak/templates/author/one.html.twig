@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page d'un auteur
+{% endblock %}
+
+{% block body %}
+
+	{% block titre_page %}
+		<h1 class="title my-4">Page d'un auteur</h1>
+	{% endblock %}
+		<div class="">
+				<div class="col">
+					<div class="card h-100">
+						<div class="card-body">
+							<h5 class="card-title">{{ author.author }}</h5>
+							<p class="card-text">{{ biography|raw }}</p>
+						</div>
+					</div>
+				</div>
+		</div>
+{% endblock %}

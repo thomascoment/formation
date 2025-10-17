@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des auteurs
+{% endblock %}
+
+{% block body %}
+
+	{% block titre_page %}
+		<h1 class="title my-4">Liste des auteurs</h1>
+
+		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 my-4">
+			{% for author in authors %}
+				<div class="col">
+					<div class="card h-100">
+						<div class="card-body">
+							<h5 class="card-title">{{ author.author }}</h5>
+							<p class="card-text">{{ author.biography|slice(0, 99)| sanitize_html }}</p>
+						</div>
+						<div class="card-footer d-flex justify-content-between">
+							<a href={{ path('author.edit', {id: author.id} )}} class="btn btn-primary btn-sm">
+								<i class="bi bi-pencil"></i>
+								Modifier</a>
+							<a href="" class="btn btn-danger btn-sm">
+								<i class="bi bi-trash"></i>
+								Supprimer</a>
+                                <a href={{ path('author.one', {id: author.id} ) }}>
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewbox="0 0 16 16">
+										<path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+										<path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
+									</svg>
+								</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	{% endblock %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail d'une citation
+{% endblock %}
+
+{% block body %}
+
+	{% block titre_page %}
+		<h1 class="title my-4">Détail d'une citation</h1>
+	{% endblock %}
+		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 my-4">
+				<div class="col">
+					<div class="card h-100">
+						<div class="card-body">
+							<h5 class="card-title">{{ citation.citations }}</h5>
+							<p class="card-text">{{ citation.explanation }}</p>
+						</div>
+					</div>
+				</div>
+		</div>
+{% endblock %}

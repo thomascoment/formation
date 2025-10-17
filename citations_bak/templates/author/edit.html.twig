@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page d'un auteur
+{% endblock %}
+
+{% block body %}
+    <h1>{{ author.author }}</h1>
+
+    {{ form(form) }}
+{% endblock %}
