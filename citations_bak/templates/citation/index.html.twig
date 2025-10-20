@@ -6,31 +6,40 @@
 {% block body %}
 	{% block titre_page %}
 		<h1 class="title my-4">Liste des citations</h1>
-		{% for citation in citations %}
+		<a class="btn btn-primary btn-sm" href={{ path('citation.add') }}>Ajouter une citation</a>
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Titre</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
 			<tbody>
-				<div class="row my-4">
-					<div>
+		{% for citation in citations %}
 						<tr>
-							<td>{{ citation.id }}</td>
 							<td>{{ citation.citations }}</td>
-							<td class="text-end">
-								<a href="citation_edit/1" class="text-decoration-none me-2">
+							<td>
+								<a href={{ path('citation.edit', { id: citation.id } ) }} class="btn btn-primary text-decoration-none me-2">
 									<i class="bi bi-pencil"></i>
 									Modifier</a>
-								<a href="citation_delete/1" class="text-decoration-none text-danger">
+							</td>
+							<td>
+								<a href="citation_delete/1" class="btn btn-danger text-decoration-none">
 									<i class="bi bi-trash"></i>
 									Supprimer</a>
+							</td>
+							<td>
 								<a href={{ path('citation.one', {id: citation.id} ) }}>
-									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewbox="0 0 16 16">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill ms-2" viewbox="0 0 16 16">
 										<path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
 										<path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
 									</svg>
 								</a>
-							</td>
+								</td>
 						</tr>
-					</div>
-				</div>
-			</tbody>
 		{% endfor %}
+			</tbody>
+			</table>
 	{% endblock %}
 {% endblock %}

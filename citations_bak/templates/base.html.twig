@@ -57,10 +57,9 @@
 			</div>
 		</nav>
 
+        {% include 'partials/flash.html.twig' %}
 		<div class="container">
-        {% 'partials/flash.html.twig' %}
 			{% block body %}
-            {{ dump(app.flashes) }}
 			
 			{% endblock %}
 		</div>
