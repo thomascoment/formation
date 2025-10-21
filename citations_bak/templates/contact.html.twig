@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nous Contacter
+{% endblock %}
+
+{% block body %}
+    <h1>Nous contacter</h1>
+
+    {{ form(form) }}
+
+    <a href={{ path('contact.index') }} class="btn btn-primary">Envoyer</a>
+{% endblock %}
