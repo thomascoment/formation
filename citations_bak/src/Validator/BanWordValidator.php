@@ -16,7 +16,7 @@ final class BanWordValidator extends ConstraintValidator
         }
 
         $value = strtolower($value);
-        foreach ($constraint->BanWords as $banWord){
+        foreach ($constraint->banWords as $banWord){
             if(str_contains($value, $banWord)){
                 $this->context->buildViolation($constraint->message)
                     ->setParameter('{{ banWord }}', $banWord)

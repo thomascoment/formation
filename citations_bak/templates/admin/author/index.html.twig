@@ -1,0 +1,33 @@
+{% extends 'admin/admin.html.twig' %}
+
+{% block title %}Liste des auteurs
+{% endblock %}
+
+{% block body %}
+
+	{% block titre_page %}
+		<h1 class="title my-4">Liste des auteurs</h1>
+		<a href={{ path('admin.author.add') }} class="btn btn-primary">Ajouter un auteur</a>
+		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 my-4">
+			{% for author in authors %}
+				<div class="col">
+					<div class="card h-100">
+						<div class="card-body">
+							<h5 class="card-title">{{ author.author }}</h5>
+							<p class="card-text">{{ author.biography|slice(0, 99)| sanitize_html }}</p>
+						</div>
+						<div class="card-footer d-flex justify-content-between">
+							<a href={{ path('admin.author.edit', {id: author.id} )}} class="btn btn-primary btn-sm">
+								<i class="bi bi-pencil"></i>
+								Modifier</a>
+								<form action="{{ path('admin.author.delete', {id: author.id}) }}" method="post">
+								<input type="hidden" name="_method" value="DELETE">
+								<button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
+								</form>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	{% endblock %}
+{% endblock %}
