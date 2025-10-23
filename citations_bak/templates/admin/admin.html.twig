@@ -33,7 +33,10 @@
 						<li class="nav-item">
 							<a class="nav-link <?= $module === 'authors' ? 'active' : '' ?>" href="{{ url('admin.author.index') }}">Les auteurs</a>
 						</li>
-					</ul>
+						<li class="nav-item">
+							<a class="nav-link <?= $module === 'authors' ? 'active' : '' ?>" href="{{ url('admin.category.index') }}">Les catégories</a>
+						</li>
+					</ul>	
 					<ul class="navbar-nav me-0 mb-2 mb-lg-0">
 						<li class="nav-item">
 							<a class="nav-link <?= $module === 'users' ? 'active' : '' ?>" href={{ path('contact') }}>Nous contacter</a>

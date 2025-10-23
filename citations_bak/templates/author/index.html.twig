@@ -7,7 +7,7 @@
 
 	{% block titre_page %}
 		<h1 class="title my-4">Liste des auteurs</h1>
-		<a href={{ path('author.add') }} class="btn btn-primary">Ajouter un auteur</a>
+		<a href={{ path('admin.author.add') }} class="btn btn-primary">Ajouter un auteur</a>
 		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 my-4">
 			{% for author in authors %}
 				<div class="col">

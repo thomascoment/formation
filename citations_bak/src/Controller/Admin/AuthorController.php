@@ -3,34 +3,44 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Author;
+use App\Entity\Category;
 use App\Form\AuthorType;
 use DateTimeImmutable;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use App\Repository\AuthorRepository;
+use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Routing\Requirement\Requirement;
 use Symfony\Component\HtmlSanitizer\HtmlSanitizerInterface;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 
 #[Route('/admin/author', name: 'admin.author.')]
 final class AuthorController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function index(AuthorRepository $authorRepo): Response
+    public function index(AuthorRepository $authorRepo, CategoryRepository $categoryRepo, EntityManagerInterface $em): Response
     {
         $authors = $authorRepo->findAll();
         return $this->render('admin/author/index.html.twig', parameters:['authors' => $authors]);
     }
 
-    #[Route('/{id}', name:'edit', methods:['GET', 'POST'])]
+    #[Route('/edit/{id}', name:'edit', methods:['GET', 'POST'])]
     public function edit(Author $author, Request $request, EntityManagerInterface $em): Response
     {
         $form = $this->createForm(AuthorType::class, $author);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()) {
+            /**
+             * @var UploadedFile $file
+             */
+            $file = $form->get('thumbnailFile')->getData();
+            $filename = $author->getId() . '.' . $file->getClientOriginalExtension();
+            $file->move($this->getParameter('kernel.project_dir') . '/public/auteurs/images', $filename);
+            $author->setThumbnail($filename);
             $author->setUpdatedAt(new DateTimeImmutable());
             $em->flush();
             $this->addFlash('success', 'L\'auteur a bien été modifié');

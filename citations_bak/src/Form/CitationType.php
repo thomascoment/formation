@@ -19,7 +19,7 @@ class CitationType extends AbstractType
             ->add('explanation')
             ->add('author', EntityType::class, [
                 'class' => Author::class,
-                'choice_label' => 'id',
+                'choice_label' => 'author',
             ])
             ->add('save', SubmitType::class, [
                 'label' => 'Envoyer'

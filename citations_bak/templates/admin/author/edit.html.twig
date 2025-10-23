@@ -6,5 +6,10 @@
 {% block body %}
     <h1>{{ author.author }}</h1>
 
+    <p>
+    <img src="/auteurs/images/{{ author.thumbnail }}" alt="">
+    </p>
+
+
     {{ form(form) }}
 {% endblock %}

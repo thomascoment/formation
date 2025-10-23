@@ -3,10 +3,15 @@
 namespace App\Form;
 
 use App\Entity\Author;
+use App\Entity\Category;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\DomCrawler\Image;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Image as ConstraintsImage;
 use Symfony\Component\Validator\Constraints\Length;
 
 class AuthorType extends AbstractType
@@ -15,6 +20,16 @@ class AuthorType extends AbstractType
     {
         $builder
             ->add('Author')
+            ->add('Category', EntityType::class, [
+                'class' => Category::class,
+                'choice_label' => 'name'
+            ])
+            ->add('thumbnailFile', FileType::class, [
+                'mapped' => false,
+                'constraints' => [
+                    new ConstraintsImage()
+                ]
+            ])
             ->add('Biography')
             ->add('birthday', null, [
                 'widget' => 'single_text',

@@ -46,6 +46,12 @@ class Author
     #[ORM\OneToMany(targetEntity: Citations::class, mappedBy: 'author')]
     private Collection $citations;
 
+    #[ORM\ManyToOne(inversedBy: 'authors')]
+    private ?Category $category = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $thumbnail = null;
+
     public function __construct()
     {
         $this->citations = new ArrayCollection();
@@ -154,6 +160,30 @@ class Author
                 $citation->setAuthor(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): static
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    public function getThumbnail(): ?string
+    {
+        return $this->thumbnail;
+    }
+
+    public function setThumbnail(?string $thumbnail): static
+    {
+        $this->thumbnail = $thumbnail;
 
         return $this;
     }

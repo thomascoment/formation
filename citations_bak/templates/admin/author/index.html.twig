@@ -13,8 +13,10 @@
 				<div class="col">
 					<div class="card h-100">
 						<div class="card-body">
-							<h5 class="card-title">{{ author.author }}</h5>
+							<h4 class="card-title">{{ author.author }}</h4>
 							<p class="card-text">{{ author.biography|slice(0, 99)| sanitize_html }}</p>
+							<h5>Catégorie</h5>
+							<a href={{ path('admin.category.index') }}>{{ author.category.name | default('') }}</a>
 						</div>
 						<div class="card-footer d-flex justify-content-between">
 							<a href={{ path('admin.author.edit', {id: author.id} )}} class="btn btn-primary btn-sm">
