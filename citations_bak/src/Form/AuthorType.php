@@ -24,12 +24,8 @@ class AuthorType extends AbstractType
                 'class' => Category::class,
                 'choice_label' => 'name'
             ])
-            ->add('thumbnailFile', FileType::class, [
-                'mapped' => false,
-                'constraints' => [
-                    new ConstraintsImage()
-                ]
-            ])
+            ->add('thumbnailFile', FileType::class
+            )
             ->add('Biography')
             ->add('birthday', null, [
                 'widget' => 'single_text',

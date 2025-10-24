@@ -34,14 +34,6 @@ final class AuthorController extends AbstractController
         $form = $this->createForm(AuthorType::class, $author);
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()) {
-            /**
-             * @var UploadedFile $file
-             */
-            $file = $form->get('thumbnailFile')->getData();
-            $filename = $author->getId() . '.' . $file->getClientOriginalExtension();
-            $file->move($this->getParameter('kernel.project_dir') . '/public/auteurs/images', $filename);
-            $author->setThumbnail($filename);
-            $author->setUpdatedAt(new DateTimeImmutable());
             $em->flush();
             $this->addFlash('success', 'L\'auteur a bien été modifié');
             return $this->redirectToRoute('admin.author.index');
