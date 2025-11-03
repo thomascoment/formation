@@ -1,37 +1,25 @@
 <script setup>
-import { ref, computed } from 'vue';
-let id = 0;
-// Var
-const msg = ref('Tuto Vue.js');
-const fName = ref('Toto');
-const lName = ref('Coment');
-const price = ref(100);
-const discount = ref(30);
+import { ref, onMounted } from 'vue';
+import HelloWorld from './component/HelloWorld.vue';
+const msg = ref('Yo');
+const msg2 = ref('');
+const val = ref('');
 
 
-//const fullName = computed(() => fName.value + " " + lName.value.toUpperCase())
-const finalPrice = computed(() => price.value - discount.value)
+onMounted(async () => {
+  const res = await fetch(
 
-const fullName = computed({
-  // getter
-  get() {
-    return fName.value + ' ' + lName.value.toUpperCase();
-  },
-  // setter
-  set(newValue) {
-    [fName.value, lName.value] = newValue.split(' ')
-  }
+  )
 })
 
-fullName.value = "Michel Bidule"
 </script>
 
 <template>
   <main id="main">
     <h1>{{ msg }}</h1>
-    <h2>Bonjour {{ fullName }}</h2>
-    <h3>Le prix est de {{ finalPrice }} €</h3>
-
+    <HelloWorld/>
+    <p>{{ msg2 }}</p>
+    <p>{{ val }}</p>
   </main>
 </template>
 
