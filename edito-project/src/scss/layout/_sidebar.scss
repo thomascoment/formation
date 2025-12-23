@@ -1,0 +1,65 @@
+@use '../variables.scss' as vars;
+@use '../mixin.scss' as mix;
+
+.sidebar {
+  box-sizing: content-box;
+  border-radius: 20px;
+  width: 225px;
+  height: 936px;
+  background-color: vars.$main-color;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
+  margin-bottom: 4rem;
+}
+
+li {
+  @include mix.menu-layout;
+  .bi-house {
+    @include mix.icon;
+  }
+}
+
+
+li {
+  @include mix.menu-layout;
+  .bi-grid {
+    @include mix.icon;
+  }
+}
+
+li {
+  @include mix.menu-layout;
+  .bi-diagram-2 {
+    @include mix.icon;
+  }
+}
+
+li {
+  @include mix.menu-layout;
+  .bi-file-text {
+    @include mix.icon;
+  }
+}
+
+li {
+  @include mix.menu-layout;
+  .bi-stars {
+    @include mix.icon;
+  }
+}
+
+li {
+  box-sizing: content-box;
+  list-style-type: none;
+
+  .link {
+    color: vars.$background-color;
+    text-decoration: none;
+    font-family: vars.$fontReg;
+    transition: background-color 0.3s;
+  }
+}

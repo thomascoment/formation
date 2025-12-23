@@ -1,0 +1,81 @@
+@use '../variables.scss' as vars;
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 165px;
+    gap: 223px;
+    height: 663px;
+}
+
+.logo-home {
+    display: flex;
+    justify-content: center;
+}
+
+.point-interet {
+    box-sizing: content-box;
+    border-radius: 15px;
+    width: 385px;
+    height: 385px;
+    background-color: vars.$main-color;
+    transition: background-color 0.3s ease-out;
+
+    a {
+        text-decoration: none;
+    }
+    
+        &:hover {
+            background-color: vars.$background-color;
+            border: 1px solid vars.$main-color;
+        
+        }
+
+    p {
+        width: 205px;
+        padding-left: 90px;
+        padding-top: 133px;
+        padding-right: 90px;
+        padding-bottom: 133px;
+        margin: 0;
+        text-align: center;
+        font-family: vars.$fontSemi;
+        font-weight: 800;
+        font-size: 32px;
+        color: vars.$background-color;
+        transition: color 0.3s ease-out;
+
+        &:hover {
+            color: vars.$main-color;
+        }
+    }
+}
+
+.photos {
+    box-sizing: content-box;
+    border-radius: 15px;
+    width: 385px;
+    height: 385px;
+    background-color: vars.$main-color;
+    
+    &:hover {
+        background-color: vars.$background-color;
+        border: 1px solid vars.$main-color;
+    }
+    p {
+        width: 205px;
+        padding-left: 90px;
+        padding-top: 133px;
+        padding-right: 90px;
+        padding-bottom: 133px;
+        margin: 0;
+        text-align: center;
+        font-family: vars.$fontSemi;
+        font-weight: 800;
+        font-size: 32px;
+        color: vars.$background-color;
+        &:hover {
+            color: vars.$main-color;
+        }
+    }
+}

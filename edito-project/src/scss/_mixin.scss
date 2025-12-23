@@ -1,0 +1,31 @@
+@use '_variables.scss' as vars;
+
+@mixin menu-layout {
+    .link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        width: 183px;
+        height: 41px;
+        margin-left: 12px;
+        padding-left: 15px;
+        background-color: transparent;
+        transform: translate(-20%, -20%);
+        font-weight: 600;
+        &:hover {
+            background-color: vars.$card;
+            color: black;
+            .bi{
+                color: black;
+            }
+        }
+    }
+}
+
+@mixin icon {
+        padding-right: 15px;
+        width: 20px;
+        height: 20px;
+        color: vars.$background-color;
+}

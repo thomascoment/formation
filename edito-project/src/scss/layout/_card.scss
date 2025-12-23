@@ -1,0 +1,33 @@
+@use '../variables.scss' as vars;
+
+.card {
+    position: absolute;
+    top: 67px;
+    left: 346px;
+    box-sizing: content-box;
+    border-radius: 20px;
+    width: 284px;
+    height: 100px;
+    background-color: vars.$card;
+    
+    svg {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    .texte {
+        display: flex;
+    }
+
+    .avance {
+        position: absolute;
+        top: 10px;
+        left: 13px;
+    }
+    .nbr{
+        position: absolute;
+        left: 13px;
+        bottom: 17px
+    }
+}

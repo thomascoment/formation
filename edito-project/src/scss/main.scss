@@ -1,0 +1,12 @@
+@use './layout/sidebar.scss';
+@use './layout/card.scss';
+@use './pages/home.scss';
+@use '../scss/variables.scss' as vars;
+
+:root {
+  font-size: 16px;
+}
+body {
+  margin: 24px;
+  background-color: vars.$background-color;
+}
