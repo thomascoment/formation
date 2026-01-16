@@ -6,9 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sass": "sass --watch ./src/scss/main.scss:./src/stylesheets/main.css"
   },
   "dependencies": {
+    "@google/genai": "^1.35.0",
+    "axios": "^1.13.2",
+    "marked": "^17.0.1",
+    "openai": "^6.16.0",
     "vue": "^3.5.24",
     "vue-router": "^4.6.4"
   },
@@ -16,5 +21,8 @@
     "@vitejs/plugin-vue": "^6.0.3",
     "sass-embedded": "^1.97.1",
     "vite": "^7.3.0"
+  },
+  "overrides": {
+    "vue": "$vue"
   }
 }

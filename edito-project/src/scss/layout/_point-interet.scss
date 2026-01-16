@@ -1,0 +1,167 @@
+@use '../variables.scss' as vars;
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content-title {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-family: vars.$fontSemi;
+    font-size: 1.625rem;
+}
+
+.fil-ariane {
+    p {
+        margin: 0;
+    }
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-family: vars.$fontMed;
+    font-size: 14px;
+
+    .chevron {
+        height: auto;
+    }
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    //flex: 1;
+    gap: 20px;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-family: vars.$fontMed;
+    padding-bottom: 10px;
+}
+
+.box {
+
+    .input-contenu {
+        border: none;
+        margin: 0;
+        padding: 5px 20px 0px 20px;
+        width: 700px;
+        height: 30px;
+        font-family: vars.$fontReg;
+        background-color: vars.$card;
+        resize: none;
+        border-radius: 1.25rem;
+        outline: 2px solid transparent;
+
+        &:focus {
+            outline: 2px solid vars.$main-color;
+        }
+
+        ::placeholder {
+            color: black;
+        }
+    }
+
+}
+
+
+.cards {
+    display: flex;
+    //min-height: calc(100vh - (88px + 24px + 37px));
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.button-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 24px;
+    margin-top: 20px;
+
+    .add {
+        width: 182px;
+        height: 50px;
+        border-radius: 10px;
+        border: none;
+        background-color: vars.$main-color;
+        color: vars.$background-color;
+        font-family: vars.$fontSemi;
+        transition: color 0.3s ease-out;
+        transition: background-color 0.3s ease-out;
+
+        &:hover {
+            color: vars.$main-color;
+            background-color: vars.$card;
+            border: 1px solid vars.$main-color;
+            cursor: pointer;
+        }
+    }
+
+    .next {
+        width: 182px;
+        height: 50px;
+        border-radius: 10px;
+        border: none;
+        background-color: vars.$main-color;
+        color: vars.$background-color;
+        font-family: vars.$fontSemi;
+        transition: color 0.3s ease-out;
+        transition: background-color 0.3s ease-out;
+
+        &:hover {
+            color: vars.$main-color;
+            background-color: vars.$card;
+            border: 1px solid vars.$main-color;
+            cursor: pointer;
+        }
+    }
+
+}
+.generate {
+    width: 182px;
+    height: 50px;
+    padding: 0;
+    border-radius: 10px;
+    border: none;
+    background-color: vars.$main-color;
+    color: vars.$background-color;
+    font-family: vars.$fontSemi;
+    transition: color 0.3s ease-out;
+    transition: background-color 0.3s ease-out;
+
+    &:hover {
+        color: vars.$main-color;
+        background-color: vars.$card;
+        border: 1px solid vars.$main-color;
+        cursor: pointer;
+    }
+}
+
+.choix-prompt {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    label {
+        font-family: vars.$fontMed;
+        margin-bottom: 10px;
+    }
+
+    select {
+        font-family: vars.$fontReg;
+        font-size: 1rem;
+        border: none;
+        height: 30px;
+        border-radius: 10px;
+        padding-left: 10px;
+        padding-bottom: 5px;
+
+        option {
+            font-family: vars.$fontReg;
+        }
+    }
+}

@@ -1,24 +1,25 @@
 <template>
+    <main id="main">
+        <section class="home-container">
 
-    <div class="logo-home">
-        <img src="../assets/logo-purple.svg" alt="" width="284px">
-    </div>
-    <section class="container">
-        <div class="point-interet">
-            <RouterLink to="/tableau-de-bord">
-                <p>Renseigner des points d'intérêts</p>
-            </RouterLink>
+            <div class="logo-home">
+            <img src="../assets/logo-purple.svg" alt="" width="284px">
         </div>
-        <div class="photos">
-            <p>Ajouter des photos</p>
+        <div class="button">
+            <RouterLink to="/tableau-de-bord" class="point-interet">
+                    Renseigner des points d'intérêts
+            </RouterLink>
+            <div class="photos">
+                <p>Ajouter des photos</p>
+            </div>
         </div>
     </section>
+</main>
 </template>
 
 <script>
-    import { RouterLink } from 'vue-router';
+import { RouterLink } from 'vue-router';
+
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

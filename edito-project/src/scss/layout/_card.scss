@@ -1,15 +1,33 @@
 @use '../variables.scss' as vars;
+@use '../mixin.scss' as mix;
 
 .card {
-    position: absolute;
-    top: 67px;
-    left: 346px;
+    display: flex;
+    height: fit-content;
+    gap: 20px;
+    justify-content: center;
+    width: fit-content;
+}
+
+.dashboard-title { 
+    margin-top: 24px;
+    justify-content: start;
+    font-size: 26px;
+    font-family: vars.$fontSemi;
+}
+
+.card-avance,
+.card-taux {
+    display: flex;
+    justify-content: center;
+    position: relative;
     box-sizing: content-box;
     border-radius: 20px;
-    width: 284px;
+    width: 17.75rem;
     height: 100px;
     background-color: vars.$card;
-    
+
+
     svg {
         position: absolute;
         right: 10px;
@@ -17,17 +35,51 @@
     }
 
     .texte {
-        display: flex;
+        @include mix.text-layout;
     }
+}
 
-    .avance {
+.card-taux {
+    .texte {
+        .complement {
+            padding-left: 111px;
+        }
+    }
+}
+
+.card-reprendre {
+    text-align: center;
+    width: 385px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //padding: 15px;
+    //flex: 1;
+    position: relative;
+    box-sizing: content-box;
+    border-radius: 20px;
+    width: 385px;
+    height: 100px;
+    background-color: vars.$card;
+    .titre {
+        font-family: vars.$fontSemi;
+        font-size: 20px;
+        display: flex; 
+    }
+    svg {
         position: absolute;
+        right: 10px;
         top: 10px;
-        left: 13px;
     }
-    .nbr{
-        position: absolute;
-        left: 13px;
-        bottom: 17px
+    p {
+        width: 268px;
     }
+}
+
+.texte {
+    display: flex;
+    font-family: vars.$fontSemi;
+    font-size: 20px;
+    width: 265px;
+    text-align: center;
 }

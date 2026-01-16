@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "OmnesReg";
   src: url("/src/font/Omnes Regular.ttf");
@@ -15,10 +16,12 @@
   src: url("/src/font/Omnes Medium.ttf");
 }
 .sidebar {
+  margin-top: 24px;
+  margin-left: 24px;
+  margin-bottom: 24px;
   box-sizing: content-box;
   border-radius: 20px;
   width: 225px;
-  height: 936px;
   background-color: #6E3DFF;
 }
 
@@ -176,85 +179,179 @@ li .link {
 }
 
 .card {
-  position: absolute;
-  top: 67px;
-  left: 346px;
+  display: flex;
+  height: fit-content;
+  gap: 20px;
+  justify-content: center;
+  width: fit-content;
+}
+
+.dashboard-title {
+  margin-top: 24px;
+  justify-content: start;
+  font-size: 26px;
+  font-family: OmnesSemi;
+}
+
+.card-avance,
+.card-taux {
+  display: flex;
+  justify-content: center;
+  position: relative;
   box-sizing: content-box;
   border-radius: 20px;
-  width: 284px;
+  width: 17.75rem;
   height: 100px;
   background-color: #EDE8FC;
 }
-.card svg {
+.card-avance svg,
+.card-taux svg {
   position: absolute;
   right: 10px;
   top: 10px;
 }
-.card .texte {
+.card-avance .texte .texte,
+.card-taux .texte .texte {
   display: flex;
 }
-.card .avance {
-  position: absolute;
-  top: 10px;
-  left: 13px;
+.card-avance .texte p,
+.card-taux .texte p {
+  margin: 0;
 }
-.card .nbr {
+.card-avance .texte .titre,
+.card-taux .texte .titre {
+  font-family: OmnesSemi;
+  font-size: 20px;
+}
+.card-avance .texte .info,
+.card-taux .texte .info {
+  font-family: OmnesMed;
   position: absolute;
-  left: 13px;
-  bottom: 17px;
+  font-size: 40px;
+  padding-top: 46px;
+  padding-left: 0px;
+}
+.card-avance .texte .complement,
+.card-taux .texte .complement {
+  font-family: OmnesReg;
+  position: absolute;
+  padding-left: 81px;
+  padding-top: 63px;
 }
 
-.container {
+.card-taux .texte .complement {
+  padding-left: 111px;
+}
+
+.card-reprendre {
+  text-align: center;
+  width: 385px;
   display: flex;
   justify-content: center;
-  margin-top: 165px;
-  gap: 223px;
+  align-items: center;
+  position: relative;
+  box-sizing: content-box;
+  border-radius: 20px;
+  width: 385px;
+  height: 100px;
+  background-color: #EDE8FC;
+}
+.card-reprendre .titre {
+  font-family: OmnesSemi;
+  font-size: 20px;
+  display: flex;
+}
+.card-reprendre svg {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.card-reprendre p {
+  width: 268px;
+}
+
+.texte {
+  display: flex;
+  font-family: OmnesSemi;
+  font-size: 20px;
+  width: 265px;
+  text-align: center;
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url("/src/assets/croisé.svg"), url("/src/assets/arc.svg"), url("/src/assets/bord.svg");
+  background-attachment: local;
+  background-repeat: no-repeat;
+  background-position: -1% -1%, 0% 100%, 75% 22%;
+}
+
+.home-container {
+  width: 1320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 165px;
   height: 663px;
 }
 
 .logo-home {
   display: flex;
-  justify-content: center;
+  flex-wrap: nowrap;
+  margin-top: 24px;
+}
+.logo-home img {
+  width: 220px;
+  height: auto;
+}
+
+.button {
+  display: flex;
+  gap: 190px;
+}
+
+a {
+  text-decoration: none;
 }
 
 .point-interet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: content-box;
   border-radius: 15px;
-  width: 385px;
-  height: 385px;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #6E3DFF;
   background-color: #6E3DFF;
   transition: background-color 0.3s ease-out;
+  margin: 0;
+  text-align: center;
+  font-family: OmnesSemi;
+  font-weight: 800;
+  font-size: 28px;
+  color: #DFDFDF;
+  transition: color 0.3s ease-out;
 }
-.point-interet a {
-  text-decoration: none;
+.point-interet:hover {
+  color: #6E3DFF;
 }
 .point-interet:hover {
   background-color: #DFDFDF;
   border: 1px solid #6E3DFF;
 }
-.point-interet p {
-  width: 205px;
-  padding-left: 90px;
-  padding-top: 133px;
-  padding-right: 90px;
-  padding-bottom: 133px;
-  margin: 0;
-  text-align: center;
-  font-family: OmnesSemi;
-  font-weight: 800;
-  font-size: 32px;
-  color: #DFDFDF;
-  transition: color 0.3s ease-out;
-}
-.point-interet p:hover {
-  color: #6E3DFF;
-}
 
 .photos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing: content-box;
   border-radius: 15px;
-  width: 385px;
-  height: 385px;
+  width: 300px;
+  height: 300px;
   background-color: #6E3DFF;
 }
 .photos:hover {
@@ -263,19 +360,262 @@ li .link {
 }
 .photos p {
   width: 205px;
-  padding-left: 90px;
-  padding-top: 133px;
-  padding-right: 90px;
-  padding-bottom: 133px;
   margin: 0;
   text-align: center;
   font-family: OmnesSemi;
   font-weight: 800;
-  font-size: 32px;
+  font-size: 28px;
   color: #DFDFDF;
 }
 .photos p:hover {
   color: #6E3DFF;
+}
+
+#app {
+  display: flex;
+  gap: 10%;
+  height: 100vh;
+}
+#app .container {
+  position: relative;
+  width: calc(100% - 625px);
+  height: fit-content;
+  margin-left: 6%;
+}
+
+@media only screen and (max-width: 1536px) {
+  #app .container {
+    margin-left: 0;
+  }
+}
+.barre {
+  display: flex;
+  justify-content: center;
+  width: min-content;
+  margin-bottom: 20px;
+}
+
+.barre-title {
+  font-family: OmnesMed;
+  font-size: 1.25rem;
+  margin: 0;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.menu {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  box-sizing: content-box;
+  width: 62rem;
+  height: 3rem;
+  background-color: #EDE8FC;
+  border-radius: 15px;
+}
+.menu .cat {
+  width: 1416px;
+  font-family: OmnesMed;
+  font-size: 1.125rem;
+  margin-left: 1rem;
+}
+.menu .chevron {
+  margin-left: 260px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.menu .progression {
+  box-sizing: content-box;
+  border-radius: 24px;
+  width: 800px;
+  height: 5px;
+  background-color: rgba(110, 61, 255, 0.4);
+}
+.menu .progression .prog {
+  font-family: OmnesMed;
+  font-size: 0.75rem;
+}
+.menu .hidden {
+  display: none;
+}
+.menu .tree {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  box-sizing: content-box;
+  width: 62rem;
+  height: 3rem;
+  background-color: #EDE8FC;
+  border-radius: 15px;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content-title {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-family: OmnesSemi;
+  font-size: 1.625rem;
+}
+
+.fil-ariane p {
+  margin: 0;
+}
+.fil-ariane {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-family: OmnesMed;
+  font-size: 14px;
+}
+.fil-ariane .chevron {
+  height: auto;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-family: OmnesMed;
+  padding-bottom: 10px;
+}
+
+.box .input-contenu {
+  border: none;
+  margin: 0;
+  padding: 5px 20px 0px 20px;
+  width: 700px;
+  height: 30px;
+  font-family: OmnesReg;
+  background-color: #EDE8FC;
+  resize: none;
+  border-radius: 1.25rem;
+  outline: 2px solid transparent;
+}
+.box .input-contenu:focus {
+  outline: 2px solid #6E3DFF;
+}
+.box .input-contenu ::placeholder {
+  color: black;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.button-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 24px;
+  margin-top: 20px;
+}
+.button-footer .add {
+  width: 182px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: #6E3DFF;
+  color: #DFDFDF;
+  font-family: OmnesSemi;
+  transition: color 0.3s ease-out;
+  transition: background-color 0.3s ease-out;
+}
+.button-footer .add:hover {
+  color: #6E3DFF;
+  background-color: #EDE8FC;
+  border: 1px solid #6E3DFF;
+  cursor: pointer;
+}
+.button-footer .next {
+  width: 182px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: #6E3DFF;
+  color: #DFDFDF;
+  font-family: OmnesSemi;
+  transition: color 0.3s ease-out;
+  transition: background-color 0.3s ease-out;
+}
+.button-footer .next:hover {
+  color: #6E3DFF;
+  background-color: #EDE8FC;
+  border: 1px solid #6E3DFF;
+  cursor: pointer;
+}
+
+.generate {
+  width: 182px;
+  height: 50px;
+  padding: 0;
+  border-radius: 10px;
+  border: none;
+  background-color: #6E3DFF;
+  color: #DFDFDF;
+  font-family: OmnesSemi;
+  transition: color 0.3s ease-out;
+  transition: background-color 0.3s ease-out;
+}
+.generate:hover {
+  color: #6E3DFF;
+  background-color: #EDE8FC;
+  border: 1px solid #6E3DFF;
+  cursor: pointer;
+}
+
+.choix-prompt {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.choix-prompt label {
+  font-family: OmnesMed;
+  margin-bottom: 10px;
+}
+.choix-prompt select {
+  font-family: OmnesReg;
+  font-size: 1rem;
+  border: none;
+  height: 30px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+.choix-prompt select option {
+  font-family: OmnesReg;
+}
+
+.container {
+  position: relative;
+  width: calc(100% - 625px);
+  height: fit-content;
+  margin-left: 6%;
+}
+
+.arbo {
+  position: relative;
+  font-family: OmnesSemi;
+  font-size: 1.625rem;
+  margin: 0;
+  margin-top: 24px;
+}
+
+.tox-tinymce {
+  width: 1500px;
+  margin-bottom: 24px;
 }
 
 :root {
@@ -283,8 +623,9 @@ li .link {
 }
 
 body {
-  margin: 24px;
+  margin: 0;
   background-color: #DFDFDF;
+  max-height: 100vh;
 }
 
 /*# sourceMappingURL=main.css.map */

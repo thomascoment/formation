@@ -4,6 +4,7 @@ import dashboard from '../views/dashboard.vue'
 import home from '../views/home.vue'
 import tree from '../views/tree.vue'
 import generate from '../views/generate.vue'
+import test from "../views/test.vue";
 
 
 const routes = [
@@ -12,7 +13,7 @@ const routes = [
     { path: '/arborescence', name: 'arborescence', component: tree },
     { path: '/contenu', name: 'contenu', component: content },
     { path: '/generer', name: 'generer', component: generate },
-
+    { path: '/test', name: 'test', component: test }
 ]
 
 const router = createRouter({

@@ -13,10 +13,12 @@
         background-color: transparent;
         transform: translate(-20%, -20%);
         font-weight: 600;
+
         &:hover {
             background-color: vars.$card;
             color: black;
-            .bi{
+
+            .bi {
                 color: black;
             }
         }
@@ -24,8 +26,41 @@
 }
 
 @mixin icon {
-        padding-right: 15px;
-        width: 20px;
-        height: 20px;
-        color: vars.$background-color;
+    padding-right: 15px;
+    width: 20px;
+    height: 20px;
+    color: vars.$background-color;
+}
+
+
+@mixin text-layout {
+    .texte {
+        display: flex;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .titre {
+        font-family: vars.$fontSemi;
+        font-size: 20px;
+        //padding-top: 10px;
+        //padding-left: 13px;
+    }
+
+    .info {
+        font-family: vars.$fontMed;
+        position: absolute;
+        font-size: 40px;
+        padding-top: 46px;
+        padding-left: 0px;
+    }
+
+    .complement {
+        font-family: vars.$fontReg;
+        position: absolute;
+        padding-left: 81px;
+        padding-top: 63px;
+    }
 }

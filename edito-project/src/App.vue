@@ -1,5 +1,6 @@
 <script>
-import dashboard from './views/dashboard.vue'
+import dashboard from './views/dashboard.vue';
+
 
 export default {
   name: 'App',
@@ -10,11 +11,8 @@ export default {
 </script>
 
 <template>
-  <div id="app">
-    <RouterView/>
-  </div>
+  <RouterView />
+  
 </template>
 
-<style>
-
-</style>
+<style></style>

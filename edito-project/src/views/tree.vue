@@ -1,17 +1,30 @@
 <script>
-import Sidebar from '../components/Sidebar.vue'
+import Sidebar from '../components/Sidebar.vue';
+import Barre from '../components/Barre.vue';
+import { getPages } from '../services/wordpress';
 
 export default {
   name: 'App',
   components: {
-    Sidebar
-  }
+    Sidebar, Barre
+  },
+  data() {
+    return {
+      pages: [],
+    };
+  },
+  async created() {
+    this.pages = await getPages();
+  },
 }
+
+
 </script>
 
 <template>
-    <h1>L'arbo</h1>
-    <div id="app">
-    <Sidebar />
-  </div>
+  <Sidebar />
+  <section class="container">
+      <h1 class="arbo">Arborescence</h1>
+      <Barre />
+    </section>
 </template>
