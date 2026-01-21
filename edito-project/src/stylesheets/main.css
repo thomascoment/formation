@@ -450,6 +450,13 @@ a {
   border-radius: 15px;
 }
 
+.sous-cat {
+  width: 150px;
+  position: relative;
+  top: 120px;
+  right: 200px;
+}
+
 .head {
   display: flex;
   align-items: center;

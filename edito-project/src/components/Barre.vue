@@ -2,22 +2,24 @@
     <h2 class="barre-title">
         Taux par catégorie
     </h2>
-    <div v-for="(page, index) in pages" :key="index" class="barre">
+    <div v-for="(page) in pages" :key="page.id" class="barre">
         <div class="menu">
-            <p class="cat" v-html="page.title.rendered"></p>
-
+            <p class="cat" v-html="page.title"></p>
+            <div v-for="ville in page.children" :key="ville.id">
+                <p class="sous-cat">{{ ville.title }}</p>
+            </div>
             <div class="progression">
                 <p class="prog"></p>
             </div>
-
+            
             <div class="chevron">
                 <svg @click="show" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                    class="bi bi-chevron-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
-                </svg>
-            </div>
+                class="bi bi-chevron-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+            </svg>
         </div>
+    </div>
     </div>
 </template>
 
@@ -65,5 +67,6 @@ import { getPages } from '../services/wordpress';
         className.value = "hidden"
     }
 }
+
 
 </script>

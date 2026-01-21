@@ -1,13 +1,10 @@
 import axios from "axios";
 
-const API_URL = 'http://app-com-together.local/wp-json/wp/v2';
+const API_URL = 'http://app-com-together.local/wp-json';
 
 export const getPages = async () => {
     try {
-        const response = await axios.get(`${API_URL}/pages`,{
-        params: {
-            per_page: 100
-        }});
+        const response = await axios.get(`${API_URL}/donnees/v1/titres-pages`);
         console.log(response.data)
         return response.data;
     } catch (error) {

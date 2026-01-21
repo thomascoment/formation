@@ -2,7 +2,8 @@
         import { GoogleGenAI } from '@google/genai';
         import { marked } from 'marked';
 
-        const GemApiKey = import.meta.env.VITE_GEMINI_API_KEY;
+        //const GemApiKey = import.meta.env.VITE_GEMINI_API_KEY;
+            const GemApiKey = 'AIzaSyD2rLkcp7kBJaZYDDKDMQ-cT5XnwNhnJ8E';
         const ai = new GoogleGenAI({ apiKey: GemApiKey })
 
 
