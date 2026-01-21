@@ -1,12 +1,5 @@
 @use '../variables.scss' as vars;
 
-.barre {
-    display: flex;
-    justify-content: center;
-    width: min-content;
-    margin-bottom: 20px;
-}
-
 .barre-title {
     font-family: vars.$fontMed;
     font-size: 1.25rem;
@@ -16,49 +9,10 @@
 }
 
 
-.menu {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    box-sizing: content-box;
-    width: 62rem;
-    height: 3rem;
-    background-color: vars.$card;
-    border-radius: 15px;
-
-    .cat {
-        width: 1416px;
-        font-family: vars.$fontMed;
-        font-size: 1.125rem;
-        margin-left: 1rem;
-    }
-
-    .chevron {
-        margin-left: 260px;
-        margin-right: 20px;
-        cursor: pointer;
-    }
-
-    .progression {
-        box-sizing: content-box;
-        border-radius: 24px;
-        width: 800px;
-        height: 5px;
-        background-color: vars.$progression;
-
-        .prog {
-            font-family: vars.$fontMed;
-            font-size: 0.75rem;
-        }
-    }
-
-    .hidden {
-        display: none;
-    }
-
-    .tree {
+    .menu-content {
         display: flex;
-        flex-wrap: wrap;
+        align-items: center;
+        display: flex;
         justify-content: start;
         align-items: center;
         box-sizing: content-box;
@@ -66,12 +20,49 @@
         height: 3rem;
         background-color: vars.$card;
         border-radius: 15px;
+        transition: transform 0.3s ease;
+    .cat {
+        width: 1416px;
+        font-family: vars.$fontMed;
+        font-size: 1.125rem;
+        margin-left: 1rem;
+    }
+    
+    .chevron {
+        margin-left: 260px;
+        margin-right: 20px;
+        cursor: pointer;
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+    }
+    
+    .chevron.rotated {
+        transform: rotate(90deg);
+    }
+    
+    .progression {
+        box-sizing: content-box;
+        border-radius: 24px;
+        width: 800px;
+        height: 5px;
+        background-color: vars.$progression;
+    }
+    
+    .slide {
+        display: flex;
+        box-sizing: content-box;
+        background-color: vars.$main-color;
+        height: 500px;
+        width: 992px;
+        
+    }
+
+    .slide.display {
     }
 }
 
-.sous-cat {
-    width: 150px;
-    position: relative;
-    top: 120px;
-    right: 200px;
+
+.render.translate {
+    transform: translate(0px, 100px) ;
 }
+

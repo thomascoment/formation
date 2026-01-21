@@ -388,13 +388,6 @@ a {
     margin-left: 0;
   }
 }
-.barre {
-  display: flex;
-  justify-content: center;
-  width: min-content;
-  margin-bottom: 20px;
-}
-
 .barre-title {
   font-family: OmnesMed;
   font-size: 1.25rem;
@@ -403,7 +396,9 @@ a {
   margin-bottom: 10px;
 }
 
-.menu {
+.menu-content {
+  display: flex;
+  align-items: center;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -412,49 +407,40 @@ a {
   height: 3rem;
   background-color: #EDE8FC;
   border-radius: 15px;
+  transition: transform 0.3s ease;
 }
-.menu .cat {
+.menu-content .cat {
   width: 1416px;
   font-family: OmnesMed;
   font-size: 1.125rem;
   margin-left: 1rem;
 }
-.menu .chevron {
+.menu-content .chevron {
   margin-left: 260px;
   margin-right: 20px;
   cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
-.menu .progression {
+.menu-content .chevron.rotated {
+  transform: rotate(90deg);
+}
+.menu-content .progression {
   box-sizing: content-box;
   border-radius: 24px;
   width: 800px;
   height: 5px;
   background-color: rgba(110, 61, 255, 0.4);
 }
-.menu .progression .prog {
-  font-family: OmnesMed;
-  font-size: 0.75rem;
-}
-.menu .hidden {
-  display: none;
-}
-.menu .tree {
+.menu-content .slide {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: start;
-  align-items: center;
   box-sizing: content-box;
-  width: 62rem;
-  height: 3rem;
-  background-color: #EDE8FC;
-  border-radius: 15px;
+  background-color: #6E3DFF;
+  height: 500px;
+  width: 992px;
 }
-
-.sous-cat {
-  width: 150px;
-  position: relative;
-  top: 120px;
-  right: 200px;
+.render.translate {
+  transform: translate(0px, 100px);
 }
 
 .head {
