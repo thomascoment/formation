@@ -12,7 +12,17 @@
     .cat-title {
         display: flex;
         align-items: center;
-        gap: 794px;
+        justify-content: space-between;
+        margin-right: 59px;
+
+        .prog {
+            display:  inline-block;
+            box-sizing: content-box;
+            background-color: vars.$main-color ;
+            height: 5px;
+            width: 200px;
+            border-radius: 5px;
+        }
         
         p {
             width: 121px;
@@ -27,12 +37,20 @@
     background-color: vars.$card;
     border-radius: 20px;
     width: 990px;
-    
+
+    .parents:after {
+        bottom: 100%;
+    }
+
     >li.categorie {
         font-family: vars.$fontSemi;
         font-size: 20px;
         padding-top: 20px;
         padding-bottom: 20px;
+
+        .categorie:after {
+            bottom: 100%;
+        }
 
         .chevron {
             cursor: pointer;

@@ -7,6 +7,9 @@
                 <p>
                     {{ page.title }}
                 </p>
+                <div class="progression">
+                        <span class="prog"></span>
+                    </div>
                 <svg @click="toggleDisplay(page)" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                 fill="currentColor" class="chevron" :class="{ rotated: page.isExpanded }" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
