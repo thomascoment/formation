@@ -8,61 +8,82 @@
     margin-bottom: 10px;
 }
 
-
-    .menu-content {
+.arbo {
+    .cat-title {
         display: flex;
         align-items: center;
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        box-sizing: content-box;
-        width: 62rem;
-        height: 3rem;
-        background-color: vars.$card;
-        border-radius: 15px;
-        transition: transform 0.3s ease;
-    .cat {
-        width: 1416px;
-        font-family: vars.$fontMed;
-        font-size: 1.125rem;
-        margin-left: 1rem;
-    }
-    
-    .chevron {
-        margin-left: 260px;
-        margin-right: 20px;
-        cursor: pointer;
-        flex-shrink: 0;
-        transition: transform 0.3s ease;
-    }
-    
-    .chevron.rotated {
-        transform: rotate(90deg);
-    }
-    
-    .progression {
-        box-sizing: content-box;
-        border-radius: 24px;
-        width: 800px;
-        height: 5px;
-        background-color: vars.$progression;
-    }
-    
-    .slide {
-        display: flex;
-        box-sizing: content-box;
-        background-color: vars.$main-color;
-        height: 500px;
-        width: 992px;
+        gap: 794px;
         
-    }
-
-    .slide.display {
+        p {
+            width: 121px;
+            margin: 0;
+        }
     }
 }
 
+.parents {
+    padding-left: 30px;
+    box-sizing: content-box;
+    background-color: vars.$card;
+    border-radius: 20px;
+    width: 990px;
+    
+    >li.categorie {
+        font-family: vars.$fontSemi;
+        font-size: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
 
-.render.translate {
-    transform: translate(0px, 100px) ;
+        .chevron {
+            cursor: pointer;
+            transform: rotate(0deg);
+            transition: transform 0.3s ease;
+        }
+
+        .chevron.rotated {
+            transform: rotate(90deg);
+            transition: 0.3s ease;
+        }
+
+        >ul.sous-cat {
+            font-family: vars.$fontMed;
+            font-size: 18px;
+            padding-top: 5px;
+            display: none;
+
+            .sous-cat-title{
+                display: flex;
+                align-items: center;
+                gap: 794px - 65px;
+                
+                p {
+                    width: 146px;
+                }
+            }
+
+            ul.sous-sous-cat {
+                font-family: vars.$fontReg;
+                font-size: 16px;
+                padding-top: 3px;
+                padding-bottom: 10px;
+                display: none;
+
+                .sous-sous-cat-title {
+                    display: flex;
+                    align-items: center;
+                    gap: 794px - 248px;
+
+                    p {
+                        width: 288px;
+                    }
+                }
+
+                ul.sous-sous-sous-cat {
+                    font-family: vars.$fontLight;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                }
+            }
+        }
+    }
 }
-

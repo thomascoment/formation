@@ -15,6 +15,10 @@
   font-family: "OmnesMed";
   src: url("/src/font/Omnes Medium.ttf");
 }
+@font-face {
+  font-family: "OmnesLight";
+  src: url("/src/font/Omnes Light.ttf");
+}
 .sidebar {
   margin-top: 24px;
   margin-left: 24px;
@@ -396,51 +400,71 @@ a {
   margin-bottom: 10px;
 }
 
-.menu-content {
+.arbo .cat-title {
   display: flex;
   align-items: center;
-  display: flex;
-  justify-content: start;
-  align-items: center;
+  gap: 794px;
+}
+.arbo .cat-title p {
+  width: 121px;
+  margin: 0;
+}
+
+.parents {
+  padding-left: 30px;
   box-sizing: content-box;
-  width: 62rem;
-  height: 3rem;
   background-color: #EDE8FC;
-  border-radius: 15px;
-  transition: transform 0.3s ease;
+  border-radius: 20px;
+  width: 990px;
 }
-.menu-content .cat {
-  width: 1416px;
-  font-family: OmnesMed;
-  font-size: 1.125rem;
-  margin-left: 1rem;
+.parents > li.categorie {
+  font-family: OmnesSemi;
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
-.menu-content .chevron {
-  margin-left: 260px;
-  margin-right: 20px;
+.parents > li.categorie .chevron {
   cursor: pointer;
-  flex-shrink: 0;
+  transform: rotate(0deg);
   transition: transform 0.3s ease;
 }
-.menu-content .chevron.rotated {
+.parents > li.categorie .chevron.rotated {
   transform: rotate(90deg);
+  transition: 0.3s ease;
 }
-.menu-content .progression {
-  box-sizing: content-box;
-  border-radius: 24px;
-  width: 800px;
-  height: 5px;
-  background-color: rgba(110, 61, 255, 0.4);
+.parents > li.categorie > ul.sous-cat {
+  font-family: OmnesMed;
+  font-size: 18px;
+  padding-top: 5px;
+  display: none;
 }
-.menu-content .slide {
+.parents > li.categorie > ul.sous-cat .sous-cat-title {
   display: flex;
-  box-sizing: content-box;
-  background-color: #6E3DFF;
-  height: 500px;
-  width: 992px;
+  align-items: center;
+  gap: 729px;
 }
-.render.translate {
-  transform: translate(0px, 100px);
+.parents > li.categorie > ul.sous-cat .sous-cat-title p {
+  width: 146px;
+}
+.parents > li.categorie > ul.sous-cat ul.sous-sous-cat {
+  font-family: OmnesReg;
+  font-size: 16px;
+  padding-top: 3px;
+  padding-bottom: 10px;
+  display: none;
+}
+.parents > li.categorie > ul.sous-cat ul.sous-sous-cat .sous-sous-cat-title {
+  display: flex;
+  align-items: center;
+  gap: 546px;
+}
+.parents > li.categorie > ul.sous-cat ul.sous-sous-cat .sous-sous-cat-title p {
+  width: 288px;
+}
+.parents > li.categorie > ul.sous-cat ul.sous-sous-cat ul.sous-sous-sous-cat {
+  font-family: OmnesLight;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .head {
@@ -598,7 +622,7 @@ a {
   margin-left: 6%;
 }
 
-.arbo {
+.arbo-title {
   position: relative;
   font-family: OmnesSemi;
   font-size: 1.625rem;
