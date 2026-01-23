@@ -1,58 +1,52 @@
-<script>
+<script setup>
 
 import Sidebar from '../components/Sidebar.vue';
 import PointInteret from '../components/PointInteret.vue';
-import { onMounted, onBeforeMount } from 'vue';
+import { ref, onMounted, onBeforeMount } from 'vue';
 
-export default {
-  name: 'App',
-  components: {
-    Sidebar, PointInteret
-  },
-  methods: {
-    eventHandler(data) {
-      tinymce.get('tinymce-editor').setContent(data)
-    }
-  },
-  data() {
-    return {
-      printResponse: ""
-    };
-  },
-  setup() {
-    onMounted(() => {
-      if (window.tinymce) {
-        window.tinymce.init({
-          selector: '#tinymce-editor',
-          id: "uuid",
-          license_key: "gpl",
-          base_url: '/tinymce',
-          suffix: '.min',
-          plugins: 'advlist anchor autolink charmap code fullscreen help image insertdatetime link lists media preview searchreplace table visualblocks wordcount',
-          toolbar: 'undo redo | styles | bold italic underline strikethrough | generateButton | selectPromptButton',
-          height: 500,
-          
-          setup: (editor) => {
-            editor.ui.registry.addButton('generateButton', {
-              tooltip: 'Générer le texte',
-              icon: 'auto-image-enhancement',
-              onAction: (_) => editor.insertContent('Bouton'),
-            });
-          },
-        });
-      }
-    });
-    onBeforeMount(() => {
-      if (window.tinymce) {
-        window.tinymce.remove('#my-editor');
-      }
-    });
-  }
+const wordpresSite = 'http://app-com-together.local/';
+const wordpressUser = import.meta.env.VITE_WORDPRESS_USER;
+const wordpressPAssword = import.meta.env.VITE_WORDPRESS_PASSWORD;
+
+const texte_genere = {
+  "title": "",
+  "content": "",
+  "status": "publish",
 }
 
+const eventHandler = (data) => {
+  tinymce.get('tinymce-editor').setContent(data)
+}
 
+const printResponse = ref("");
 
+onMounted(() => {
+  if (window.tinymce) {
+    window.tinymce.init({
+      selector: '#tinymce-editor',
+      id: "uuid",
+      license_key: "gpl",
+      base_url: '/tinymce',
+      suffix: '.min',
+      plugins: 'advlist anchor autolink charmap code fullscreen help image insertdatetime link lists media preview searchreplace table visualblocks wordcount',
+      toolbar: 'undo redo | styles | bold italic underline strikethrough | generateButton | selectPromptButton',
+      height: 500,
 
+      setup: (editor) => {
+        editor.ui.registry.addButton('generateButton', {
+          tooltip: 'Enregistrer le texte',
+          icon: 'checkmark',
+          onAction: (_) => editor.insertContent('Bouton'),
+        });
+      },
+    });
+  }
+});
+onBeforeMount(() => {
+  if (window.tinymce) {
+    window.tinymce.remove('#my-editor');
+  }
+});
 </script>
 
 <template>

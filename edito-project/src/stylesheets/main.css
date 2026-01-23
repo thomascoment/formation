@@ -384,7 +384,6 @@ a {
   position: relative;
   width: calc(100% - 625px);
   height: fit-content;
-  margin-left: 6%;
 }
 
 @media only screen and (max-width: 1536px) {
@@ -404,7 +403,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-right: 59px;
 }
 .arbo .cat-title .prog {
   display: inline-block;
@@ -415,7 +413,6 @@ a {
   border-radius: 5px;
 }
 .arbo .cat-title p {
-  width: 121px;
   margin: 0;
 }
 
@@ -424,9 +421,9 @@ a {
   box-sizing: content-box;
   background-color: #EDE8FC;
   border-radius: 20px;
-  width: 990px;
+  padding-right: 50px;
 }
-.parents .parents:after {
+.parents:after {
   bottom: 100%;
 }
 .parents > li.categorie {
@@ -435,7 +432,7 @@ a {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.parents > li.categorie .categorie:after {
+.parents > li.categorie:after {
   bottom: 100%;
 }
 .parents > li.categorie .chevron {
@@ -456,10 +453,7 @@ a {
 .parents > li.categorie > ul.sous-cat .sous-cat-title {
   display: flex;
   align-items: center;
-  gap: 729px;
-}
-.parents > li.categorie > ul.sous-cat .sous-cat-title p {
-  width: 146px;
+  justify-content: space-between;
 }
 .parents > li.categorie > ul.sous-cat ul.sous-sous-cat {
   font-family: OmnesReg;
@@ -471,10 +465,7 @@ a {
 .parents > li.categorie > ul.sous-cat ul.sous-sous-cat .sous-sous-cat-title {
   display: flex;
   align-items: center;
-  gap: 546px;
-}
-.parents > li.categorie > ul.sous-cat ul.sous-sous-cat .sous-sous-cat-title p {
-  width: 288px;
+  justify-content: space-between;
 }
 .parents > li.categorie > ul.sous-cat ul.sous-sous-cat ul.sous-sous-sous-cat {
   font-family: OmnesLight;
@@ -628,13 +619,6 @@ a {
 }
 .choix-prompt select option {
   font-family: OmnesReg;
-}
-
-.container {
-  position: relative;
-  width: calc(100% - 625px);
-  height: fit-content;
-  margin-left: 6%;
 }
 
 .arbo-title {

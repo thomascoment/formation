@@ -1,6 +1,7 @@
         <script>
         import { GoogleGenAI } from '@google/genai';
         import { marked } from 'marked';
+        import { ref, onMounted } from 'vue';
 
         const GemApiKey = import.meta.env.VITE_GEMINI_API_KEY;
         const ai = new GoogleGenAI({ apiKey: GemApiKey })
@@ -14,6 +15,7 @@
                     await this.main();
                     this.sendData();
                 },
+                
                 async main() {
                     const response = await ai.models.generateContent({
                         model: 'gemini-2.5-flash',
@@ -30,7 +32,6 @@
                         ${this.prompt10},
                         ${this.choosenPrompt}`
                     });
-
 
                     const content = response.text;
                     const htmlContent = marked.parse(content);
@@ -95,8 +96,6 @@
 <template>
     <div class="head">
         <h1 class="content-title">Contenu</h1>
-
-
     </div>
     <div class="fil-ariane">
         <p>Test</p>

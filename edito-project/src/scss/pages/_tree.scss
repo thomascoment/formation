@@ -1,12 +1,5 @@
 @use '../variables.scss' as vars;
 
-.container {
-    position: relative;
-    width: calc(100% - 625px);
-    height: fit-content;
-    margin-left: 6%;
-}
-
 .arbo-title {
     position: relative;
     font-family: vars.$fontSemi;

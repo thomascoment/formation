@@ -5,7 +5,9 @@
             <li class="categorie">
                 <div class="cat-title">
                 <p>
+                    <RouterLink to="/contenu">
                     {{ page.title }}
+                    </RouterLink>
                 </p>
                 <div class="progression">
                         <span class="prog"></span>
@@ -65,7 +67,7 @@
 import { ref } from 'vue';
 import { getPages } from '../services/wordpress';
 import { onMounted } from 'vue';
-
+import { RouterLink } from 'vue-router';
 
 const pages = ref([]);
 
