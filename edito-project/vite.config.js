@@ -1,29 +1,24 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-// https://vite.dev/config/
+console.log("--- LA CONFIG VITE EST CHARGE TA MERE ---")
+
 export default defineConfig({
-  plugins: [
-    vue()
-  ],
-  build: {
-    target: 'esnext',
-  },
-  optimizeDeps: {
-    disabled: true, // Désactive complètement le regroupement des dépendances
-    esbuildOptions: {
-      target: 'esnext',
-    }
-  },
-  resolve: {
-    // Force Vite à n'utiliser qu'une seule instance de ces paquets
-    dedupe: ['vue', 'vite', '@vite/client'],
+  plugins: [vue()],
+  // On force Vite à traiter les fichiers .js comme des sources à transformer
+  esbuild: {
+    include: /\.[jt]sx?$/,
+    exclude: [],
   },
   server: {
-    // Parfois, le système de fichiers (FS) crée des chemins doubles (casse différente)
+    host: 'localhost',
+    port: 5173,
+    strictPort: true,
     fs: {
-      strict: true
+      // Autorise l'accès aux fichiers en dehors de la racine si besoin
+      strict: false 
     }
   }
-},
-)
+})
+
+

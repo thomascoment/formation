@@ -36,6 +36,7 @@
 @mixin text-layout {
     .texte {
         display: flex;
+        
     }
 
     p {
@@ -45,22 +46,15 @@
     .titre {
         font-family: vars.$fontSemi;
         font-size: 20px;
-        //padding-top: 10px;
-        //padding-left: 13px;
     }
 
     .info {
         font-family: vars.$fontMed;
-        position: absolute;
         font-size: 40px;
-        padding-top: 46px;
-        padding-left: 0px;
+        vertical-align: baseline;
     }
 
     .complement {
         font-family: vars.$fontReg;
-        position: absolute;
-        padding-left: 81px;
-        padding-top: 63px;
     }
 }

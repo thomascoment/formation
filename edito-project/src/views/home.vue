@@ -5,13 +5,13 @@
             <div class="logo-home">
             <img src="../assets/logo-purple.svg" alt="" width="284px">
         </div>
-        <div class="button">
-            <RouterLink to="/tableau-de-bord" class="point-interet">
+        <div class="home-button">
+            <RouterLink to="/tableau-de-bord" class="button">
                     Renseigner des points d'intérêts
             </RouterLink>
-            <div class="photos">
-                <p>Ajouter des photos</p>
-            </div>
+            <RouterLink class="button">
+                Ajouter des photos
+            </RouterLink>
         </div>
     </section>
 </main>

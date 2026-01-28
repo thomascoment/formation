@@ -14,7 +14,7 @@ export default {
 <template>
   <Sidebar />
     <section class="container">
-      <h1 class="dashboard-title">Tableau de Bord</h1>
+      <h2 class="dashboard-title">Tableau de Bord</h2>
       <Card />
       <Tree />
     </section>

@@ -8,12 +8,23 @@
 @use './pages/content.scss';
 @use '../scss/variables.scss' as vars;
 
+#app {
+  display: flex;
+  gap: 10%;
+  height: 100vh;
+
+  .container {
+    width: 1320px;
+  }
+}
+
+
 :root {
   font-size: 16px;
 }
 
 body {
-  margin: 0;
+  margin: 24px;
   background-color: vars.$background-color;
   max-height: 100vh;
 }

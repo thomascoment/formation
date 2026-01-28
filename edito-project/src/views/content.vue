@@ -3,19 +3,26 @@
 import Sidebar from '../components/Sidebar.vue';
 import PointInteret from '../components/PointInteret.vue';
 import { ref, onMounted, onBeforeMount } from 'vue';
+import { createPost, getJWToken } from '../services/save';
 
-const wordpresSite = 'http://app-com-together.local/';
-const wordpressUser = import.meta.env.VITE_WORDPRESS_USER;
-const wordpressPAssword = import.meta.env.VITE_WORDPRESS_PASSWORD;
-
-const texte_genere = {
-  "title": "",
-  "content": "",
-  "status": "publish",
-}
+const postContent = ref('')
 
 const eventHandler = (data) => {
   tinymce.get('tinymce-editor').setContent(data)
+};
+
+async function saveTextToWP() {
+  const username = 'testuser';
+  const password = 'testuser'
+  const content = tinymce.get('tinymce-editor').getContent();
+  const title = 'Titre par défaut'
+    try {
+        const token = await getJWToken(username, password);
+        const post = await createPost(token, title, content);
+        console.log('Article crée avec succès :', post);
+    } catch (error) {
+        console.error('Erreur lors de la création de l\'article :', error);
+    }
 }
 
 const printResponse = ref("");
@@ -29,7 +36,7 @@ onMounted(() => {
       base_url: '/tinymce',
       suffix: '.min',
       plugins: 'advlist anchor autolink charmap code fullscreen help image insertdatetime link lists media preview searchreplace table visualblocks wordcount',
-      toolbar: 'undo redo | styles | bold italic underline strikethrough | generateButton | selectPromptButton',
+      toolbar: 'undo redo | styles | bold italic underline strikethrough | generateButton',
       height: 500,
 
       setup: (editor) => {
@@ -53,6 +60,8 @@ onBeforeMount(() => {
   <Sidebar />
   <div class="content-container">
     <PointInteret @sendResponse="eventHandler" />
+
+            <button @click="saveTextToWP()" class="button">Enregistrer le texte</button>
     <div class="editor-container">
       <textarea id="tinymce-editor"></textarea>
     </div>
@@ -60,9 +69,6 @@ onBeforeMount(() => {
 </template>
 
 <style scoped>
-.content-container {
-  margin-left: -4%;
-}
 
 .content {
   position: relative;

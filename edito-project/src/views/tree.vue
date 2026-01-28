@@ -24,7 +24,6 @@ export default {
 <template>
   <Sidebar />
   <section class="container">
-      <h1 class="arbo-title">Arborescence</h1>
       <Barre />
     </section>
 </template>

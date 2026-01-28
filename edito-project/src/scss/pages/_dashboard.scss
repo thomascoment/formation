@@ -1,17 +1,16 @@
 @use '../variables.scss' as vars;
 
-#app {
-  display: flex;
-  gap: 10%;
-  height: 100vh;
-
-  .container {
-    position: relative;
-    width: calc(100% - 625px);
-    height: fit-content;
-  }
+.dashboard-title {
+    margin: 0;
+    margin-bottom: 24px;
+    font-family: vars.$fontSemi;
+    font-size: 1.625rem;
 }
 
+.dashboard-title { 
+    font-size: 26px;
+    font-family: vars.$fontSemi;
+}
 
 @media only screen and (max-width: 1536px) {
 

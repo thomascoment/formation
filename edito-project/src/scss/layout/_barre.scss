@@ -1,5 +1,11 @@
 @use '../variables.scss' as vars;
 
+.tree-title {
+    margin: 0;
+    font-family: vars.$fontSemi;
+    font-size: 1.625rem;
+}
+
 .barre-title {
     font-family: vars.$fontMed;
     font-size: 1.25rem;
@@ -8,21 +14,24 @@
     margin-bottom: 10px;
 }
 
+
 .arbo {
     .cat-title {
         display: flex;
         align-items: center;
         justify-content: space-between;
-
+        
         .prog {
-            display:  inline-block;
+            display: inline-block;
             box-sizing: content-box;
             background-color: vars.$main-color ;
             height: 5px;
             width: 200px;
             border-radius: 5px;
-        }
-        
+            position: absolute;
+            left: 52%;
+            }
+
         p {
             margin: 0;
         }
@@ -67,7 +76,7 @@
             padding-top: 5px;
             display: none;
 
-            .sous-cat-title{
+            .sous-cat-title {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
