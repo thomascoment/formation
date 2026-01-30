@@ -10,7 +10,7 @@
             <li class="categorie">
                 <div class="cat-title">
                 <p>
-                    <RouterLink to="/contenu">
+                    <RouterLink to="/contenu" class="routerlink">
                     {{ page.title }}
                     </RouterLink>
                 </p>

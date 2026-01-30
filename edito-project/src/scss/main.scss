@@ -6,6 +6,8 @@
 @use './layout/point-interet.scss';
 @use './pages/tree.scss';
 @use './pages/content.scss';
+@use './layout/header';
+@use './layout/pop-up-form';
 @use '../scss/variables.scss' as vars;
 
 #app {

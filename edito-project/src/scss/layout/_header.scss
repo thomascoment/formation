@@ -1,0 +1,20 @@
+@use '../variables' as vars;
+
+
+
+
+.fil-ariane {
+    p {
+        margin: 0;
+    }
+
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-family: vars.$fontMed;
+    font-size: 14px;
+
+    .chevron {
+        height: auto;
+    }
+}

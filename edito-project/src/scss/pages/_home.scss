@@ -1,6 +1,7 @@
 @use '../variables.scss' as vars;
 
 #main {
+    margin: -24px;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -13,7 +14,7 @@
     background-position:
         -1% -1%,
         0% 100%,
-        79% 27%;
+        79% 21%;
 }
 
 .home-container {
@@ -60,7 +61,7 @@
     }
 }
 
-.button {
+.button-link {
 
     &:hover {
         color: vars.$main-color;

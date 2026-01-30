@@ -302,13 +302,14 @@ li .link {
 }
 
 #main {
+  margin: -24px;
   display: flex;
   justify-content: center;
   width: 100%;
   background-image: url("/src/assets/croisé.svg"), url("/src/assets/arc.svg"), url("/src/assets/bord.svg");
   background-attachment: local;
   background-repeat: no-repeat;
-  background-position: -1% -1%, 0% 100%, 79% 27%;
+  background-position: -1% -1%, 0% 100%, 79% 21%;
 }
 
 .home-container {
@@ -353,10 +354,10 @@ li .link {
   flex: 1;
 }
 
-.button:hover {
+.button-link:hover {
   color: #6E3DFF;
 }
-.button:hover {
+.button-link:hover {
   background-color: #f2f2f2;
   border: 1px solid #6E3DFF;
 }
@@ -396,6 +397,10 @@ li .link {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.arbo .cat-title .routerlink {
+  text-decoration: none;
+  color: black;
 }
 .arbo .cat-title .prog {
   display: inline-block;
@@ -480,20 +485,6 @@ li .link {
   font-family: OmnesSemi;
   font-size: 1.625rem;
   margin: 0;
-}
-
-.fil-ariane p {
-  margin: 0;
-}
-.fil-ariane {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-  font-family: OmnesMed;
-  font-size: 14px;
-}
-.fil-ariane .chevron {
-  height: auto;
 }
 
 .card-container {
@@ -624,9 +615,40 @@ li .link {
   background-color: #6E3DFF;
 }
 
-.tox-tinymce {
-  max-width: 100%;
+.editor-container {
   margin-bottom: 24px;
+}
+
+.fil-ariane p {
+  margin: 0;
+}
+.fil-ariane {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-family: OmnesMed;
+  font-size: 14px;
+}
+.fil-ariane .chevron {
+  height: auto;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-inner {
+  background: #FFF;
+  padding: 32px;
 }
 
 #app {

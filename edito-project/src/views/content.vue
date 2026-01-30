@@ -3,7 +3,8 @@
 import Sidebar from '../components/Sidebar.vue';
 import PointInteret from '../components/PointInteret.vue';
 import { ref, onMounted, onBeforeMount } from 'vue';
-import { createPost, getJWToken } from '../services/save';
+import { createPost } from '../services/save';
+import Header from '../components/Header.vue';
 
 const postContent = ref('')
 
@@ -12,13 +13,16 @@ const eventHandler = (data) => {
 };
 
 async function saveTextToWP() {
-  const username = 'testuser';
-  const password = 'testuser'
+  if (!sessionStorage.getItem('jwtToken')) {
+    alert('Vous devez être connecté pour enregistrer un texte')
+  }
+  const token = sessionStorage.getItem('jwtToken');
   const content = tinymce.get('tinymce-editor').getContent();
-  const title = 'Titre par défaut'
+  const title = tinymce.get('tinymce-editor').getContent(1);
+  console.log(title)
     try {
-        const token = await getJWToken(username, password);
         const post = await createPost(token, title, content);
+        alert('Article enregistré !');
         console.log('Article crée avec succès :', post);
     } catch (error) {
         console.error('Erreur lors de la création de l\'article :', error);
@@ -42,8 +46,9 @@ onMounted(() => {
       setup: (editor) => {
         editor.ui.registry.addButton('generateButton', {
           tooltip: 'Enregistrer le texte',
+          text: 'Enregistrer le texte',
           icon: 'checkmark',
-          onAction: (_) => editor.insertContent('Bouton'),
+          onAction: (_) => saveTextToWP(),
         });
       },
     });
@@ -59,9 +64,8 @@ onBeforeMount(() => {
 <template>
   <Sidebar />
   <div class="content-container">
+    <Header></Header>
     <PointInteret @sendResponse="eventHandler" />
-
-            <button @click="saveTextToWP()" class="button">Enregistrer le texte</button>
     <div class="editor-container">
       <textarea id="tinymce-editor"></textarea>
     </div>

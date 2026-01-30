@@ -14,22 +14,6 @@
     margin: 0;
 }
 
-.fil-ariane {
-    p {
-        margin: 0;
-    }
-
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    font-family: vars.$fontMed;
-    font-size: 14px;
-
-    .chevron {
-        height: auto;
-    }
-}
-
 .card-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

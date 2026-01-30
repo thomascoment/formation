@@ -8,16 +8,7 @@ export default {
   components: {
     Sidebar, Barre
   },
-  data() {
-    return {
-      pages: [],
-    };
-  },
-  async created() {
-    this.pages = await getPages();
-  },
 }
-
 
 </script>
 

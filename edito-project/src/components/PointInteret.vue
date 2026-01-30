@@ -2,14 +2,12 @@
         import { GoogleGenAI } from '@google/genai';
         import { marked } from 'marked';
         import { ref, onMounted } from 'vue';
-        import { login } from '../services/save';
 
         const GemApiKey = import.meta.env.VITE_GEMINI_API_KEY;
         const ai = new GoogleGenAI({ apiKey: GemApiKey })
 
 
         const promptsValues = ref({
-
             prompt1: '',
             prompt2: '',
             prompt3: '',
@@ -20,7 +18,6 @@
             prompt8: '',
             prompt9: '',
             prompt10: '',
-
         })
         const printResponse = ref('');
         const newCard = ref('');
@@ -51,7 +48,7 @@
                     model: 'gemini-2.5-flash',
                     contents:
                         `
-                    ${promptsValues.value.prompt1},
+                        ${promptsValues.value.prompt1},
                         ${promptsValues.value.prompt2},
                         ${promptsValues.value.prompt3},
                         ${promptsValues.value.prompt4},
@@ -110,41 +107,7 @@
 
 </script>
 <template>
-    <div class="head">
-        <h1 class="content-title">Contenu</h1>
-    </div>
-    <div class="sign-in-button">
 
-        <button @click="login">Se Connecter</button>
-    </div>
-
-    <div class="fil-ariane">
-        <p>Test</p>
-        <div class="chevron">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                class="bi bi-chevron-right" viewBox="0 -3 20 20">
-                <path fill-rule="evenodd"
-                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
-            </svg>
-        </div>
-        <p>Test</p>
-        <div class="chevron">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                class="bi bi-chevron-right" viewBox="0 -3 20 20">
-                <path fill-rule="evenodd"
-                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
-            </svg>
-        </div>
-        <p>Test</p>
-        <div class="chevron">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                class="bi bi-chevron-right" viewBox="0 -3 20 20">
-                <path fill-rule="evenodd"
-                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
-            </svg>
-        </div>
-        <p>Test</p>
-    </div>
     <div class="choix-prompt">
         <label for="prompt-select">Choisissez le ton voulu</label>
         <select v-model='choosenPrompt' name="prompts" id="prompt-select">
@@ -165,7 +128,6 @@
             <input v-model="newCard" style="display: none;">
             <button @click="generateAndSend()" class="button">Générer</button>
             <button class="button">Page suivante</button>
-
         </div>
     </div>
 </template>
