@@ -125,7 +125,6 @@
             </div>
         </div>
         <div class="button-footer">
-            <input v-model="newCard" style="display: none;">
             <button @click="generateAndSend()" class="button">Générer</button>
             <button class="button">Page suivante</button>
         </div>

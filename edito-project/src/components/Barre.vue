@@ -11,7 +11,7 @@
                 <div class="cat-title">
                 <p>
                     <RouterLink to="/contenu" class="routerlink">
-                    {{ page.title }}
+                    {{ page.post_title }}
                     </RouterLink>
                 </p>
                         <span class="prog"></span>
@@ -26,7 +26,7 @@
                     <li v-for="children in page.children">
                         <div class="sous-cat-title">
                         <p>
-                            {{ children.title }}
+                            {{ children.post_title }}
                         </p>
                             <svg v-if="children.showChevron" @click="toggleDisplay(children)" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             fill="currentColor" class="chevron" :class="{ rotated: children.isExpanded }"
@@ -41,7 +41,7 @@
                             <li v-for="children in children.children">
                                 <div class="sous-sous-cat-title">
                                     <p>
-                                        {{ children.title }}
+                                        {{ children.post_title }}
                                     </p>
                                         <svg v-if="children.showChevron" @click="toggleDisplay(children)"
                                         xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -53,7 +53,7 @@
 
                                 <ul class="sous-sous-sous-cat"
                                     :style="{ display: children.isExpanded ? 'block' : 'none' }" v-if="children.children">
-                                    <li v-for="children in children.children">{{ children.title }}
+                                    <li v-for="children in children.children">{{ children.post_title }}
                                     </li>
                                 </ul>
                             </li>
@@ -100,5 +100,4 @@ onMounted(async () => {
 const toggleDisplay = (page) => {
         page.isExpanded = !page.isExpanded
 }
-
 </script>

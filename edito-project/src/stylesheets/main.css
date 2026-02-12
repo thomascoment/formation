@@ -543,8 +543,7 @@ li .link {
   background-color: #6E3DFF;
   color: #f2f2f2;
   font-family: OmnesSemi;
-  transition: color 0.3s ease-out;
-  transition: background-color 0.3s ease-out;
+  transition: color 0.3s ease-out, background-color 0.3s ease-out;
 }
 .button-footer .add:hover {
   color: #6E3DFF;
@@ -573,14 +572,12 @@ li .link {
 .button {
   width: 182px;
   height: 50px;
-  padding: 0;
   border-radius: 10px;
   border: none;
   background-color: #6E3DFF;
   color: #f2f2f2;
   font-family: OmnesSemi;
-  transition: color 0.3s ease-out;
-  transition: background-color 0.3s ease-out;
+  transition: color 0.3s ease-out, background-color 0.3s ease-out;
 }
 .button:hover {
   color: #6E3DFF;
@@ -598,21 +595,24 @@ li .link {
   font-family: OmnesMed;
   margin-bottom: 10px;
 }
-.choix-prompt select {
+.choix-prompt select,
+.choix-prompt select::picker(select) {
+  appearance: base-select;
+  font-family: OmnesReg;
+  border: none;
+  background-color: #ffffff;
+}
+.choix-prompt ::picker(select) {
   font-family: OmnesReg;
   font-size: 1rem;
-  border: none;
-  height: 30px;
   border-radius: 10px;
   padding-left: 10px;
   padding-bottom: 5px;
-  background-color: #ffffff;
+  background: #ffffff;
 }
-.choix-prompt select option {
+.choix-prompt option,
+.choix-prompt ::picker(option) {
   font-family: OmnesReg;
-}
-.choix-prompt select ::picker(select) {
-  background-color: #6E3DFF;
 }
 
 .editor-container {

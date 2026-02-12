@@ -76,8 +76,7 @@
         background-color: vars.$main-color;
         color: vars.$background-color;
         font-family: vars.$fontSemi;
-        transition: color 0.3s ease-out;
-        transition: background-color 0.3s ease-out;
+        transition: color 0.3s ease-out, background-color 0.3s ease-out;
 
         &:hover {
             color: vars.$main-color;
@@ -111,14 +110,13 @@
 .button {
     width: 182px;
     height: 50px;
-    padding: 0;
     border-radius: 10px;
     border: none;
     background-color: vars.$main-color;
     color: vars.$background-color;
     font-family: vars.$fontSemi;
-    transition: color 0.3s ease-out;
-    transition: background-color 0.3s ease-out;
+    transition: color 0.3s ease-out, 
+    background-color 0.3s ease-out;
 
     &:hover {
         color: vars.$main-color;
@@ -137,23 +135,26 @@
         font-family: vars.$fontMed;
         margin-bottom: 10px;
     }
-
-    select {
+    select,
+    select::picker(select) {
+        appearance: base-select;
         font-family: vars.$fontReg;
-        font-size: 1rem;
         border: none;
-        height: 30px;
-        border-radius: 10px;
-        padding-left: 10px;
-        padding-bottom: 5px;
         background-color: vars.$card;
-
-        
-        option {
+    }
+    ::picker(select) {
             font-family: vars.$fontReg;
+            font-size: 1rem;
+            border-radius: 10px;
+            padding-left: 10px;
+            padding-bottom: 5px;
+            background: vars.$card;
+
         }
-        ::picker(select) {
-            background-color: vars.$main-color;
+        option,
+            ::picker(option) {
+                font-family: vars.$fontReg;
         }
     }
-}
+
+    
