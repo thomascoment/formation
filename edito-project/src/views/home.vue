@@ -20,7 +20,7 @@
 
 <script setup>
 import { RouterLink } from 'vue-router';
-import PopUpForm from '../components/PopUpForm.vue';
+
 </script>
 
 <style scoped>

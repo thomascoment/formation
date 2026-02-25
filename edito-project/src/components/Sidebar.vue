@@ -6,8 +6,7 @@
 
             <ul class="sidebar-list">
                 <li v-for="(item, index) in menuItems" :key="index">
-                    <RouterLink :to="item.to" class="link" :class="{ 'active': item.isActive }"
-                        >
+                    <RouterLink :to="item.to" class="link" :class="{ 'active': item.isActive }">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             :class="item.iconClass" viewBox="0 0 16 16">
                             <path :d="item.d" />
@@ -44,6 +43,7 @@ watch(() => route.path, () => {
 });
 
 updateActiveItem();
+
 
 </script>
 

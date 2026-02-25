@@ -1,8 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-console.log("--- LA CONFIG VITE EST CHARGE TA MERE ---")
-
 export default defineConfig({
   plugins: [vue()],
   // On force Vite à traiter les fichiers .js comme des sources à transformer

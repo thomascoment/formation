@@ -8,9 +8,6 @@ import Header from '../components/Header.vue';
 
 const postContent = ref('')
 
-const eventHandler = (data) => {
-  tinymce.get('tinymce-editor').setContent(data)
-};
 
 async function saveTextToWP() {
   if (!sessionStorage.getItem('jwtToken')) {
@@ -18,15 +15,14 @@ async function saveTextToWP() {
   }
   const token = sessionStorage.getItem('jwtToken');
   const content = tinymce.get('tinymce-editor').getContent();
-  const title = tinymce.get('tinymce-editor').getContent(1);
-  console.log(title)
-    try {
-        const post = await createPost(token, title, content);
-        alert('Article enregistré !');
-        console.log('Article crée avec succès :', post);
-    } catch (error) {
-        console.error('Erreur lors de la création de l\'article :', error);
-    }
+  const title = tinymce.get('tinymce-editor').getContent();
+  try {
+    const post = await createPost(token, title, content);
+    alert('Article enregistré !');
+    console.log('Article crée avec succès :', post);
+  } catch (error) {
+    console.error('Erreur lors de la création de l\'article :', error);
+  }
 }
 
 const printResponse = ref("");
@@ -42,7 +38,7 @@ onMounted(() => {
       plugins: 'advlist anchor autolink charmap code fullscreen help image insertdatetime link lists media preview searchreplace table visualblocks wordcount',
       toolbar: 'undo redo | styles | bold italic underline strikethrough | generateButton',
       height: 500,
-
+      
       setup: (editor) => {
         editor.ui.registry.addButton('generateButton', {
           tooltip: 'Enregistrer le texte',
@@ -56,9 +52,14 @@ onMounted(() => {
 });
 onBeforeMount(() => {
   if (window.tinymce) {
-    window.tinymce.remove('#my-editor');
+    window.tinymce.remove('#tinymce-editor');
   }
 });
+
+const eventHandler = (data) => {
+  tinymce.get('tinymce-editor').setContent(data)
+};
+
 </script>
 
 <template>
