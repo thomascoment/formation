@@ -85,7 +85,7 @@ class Quote extends AbstractEntity
         return $this;
     }
 
-    public function setAuthorId(int $author_id): self
+    public function setAuthor_Id(int $author_id): self
     {
         if($author_id === '' || $author_id === '0' || $author_id === 0){
             $this->$author_id = null;

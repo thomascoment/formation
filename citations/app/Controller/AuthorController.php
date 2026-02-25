@@ -28,7 +28,7 @@ class AuthorController extends AbstractController
         
         $author = new AuthorRepository(\App\Database\PDOSingleton::getInstance());
         $authorData = $author->find($id);
-        $this->render("author/show", ['author' => $author]);
+        $this->render("author/show", ['author' => $authorData]);
         }
 
 
@@ -39,7 +39,7 @@ class AuthorController extends AbstractController
         if(isset($_POST['author'], $_POST['biography'])){
             if(!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']){
                 unset($_SESSION['csrf_token']);
-                $this->addFlash('Fuck off', AbstractController::DANGER);
+                $this->addFlash('Non', AbstractController::DANGER);
                 $this->redirect('/authors/add');
             }
             $authorRepo = new AuthorRepository(\App\Database\PDOSingleton::getInstance());

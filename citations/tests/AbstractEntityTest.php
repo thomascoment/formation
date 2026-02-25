@@ -10,16 +10,16 @@ use App\Model\Entity\AbstractEntity;
  */
 class DummyEntity extends AbstractEntity
 {
-    private ?string $name = null;
+    private ?string $author = null;
 
-    public function getName(): ?string
+    public function getAuthor(): ?string
     {
-        return $this->name;
+        return $this->author;
     }
 
-    public function setName(?string $name): self
+    public function setAuthor(?string $author): self
     {
-        $this->name = $name;
+        $this->author = $author;
         return $this;
     }
 }
@@ -68,14 +68,14 @@ class AbstractEntityTest extends TestCase
     {
         $data = [
             "id" => 10,
-            "name" => "Test Entity"
+            "author" => "Test Entity"
         ];
 
         $entity = new DummyEntity();
         $entity->hydrate($data);
 
         $this->assertEquals(10, $entity->getId());
-        $this->assertEquals("Test Entity", $entity->getName());
+        $this->assertEquals("Test Entity", $entity->getAuthor());
     }
 
     /**

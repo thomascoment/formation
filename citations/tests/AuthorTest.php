@@ -16,9 +16,9 @@ class AuthorTest extends TestCase
     public function testName()
     {
         $author = new Author();
-        $author->setName("Albert Einstein");
+        $author->setAuthor("Albert Einstein");
 
-        $this->assertEquals("Albert Einstein", $author->getName());
+        $this->assertEquals("Albert Einstein", $author->getAuthor());
     }
 
     /**
@@ -50,7 +50,7 @@ class AuthorTest extends TestCase
     {
         $data = [
             "id" => 1,
-            "name" => "Oscar Wilde",
+            "author" => "Oscar Wilde",
             "image" => "wilde.jpg",
             "biography" => "Écrivain et poète"
         ];
@@ -59,7 +59,7 @@ class AuthorTest extends TestCase
         $author->hydrate($data);
 
         $this->assertEquals(1, $author->getId());
-        $this->assertEquals("Oscar Wilde", $author->getName());
+        $this->assertEquals("Oscar Wilde", $author->getAuthor());
         $this->assertEquals("wilde.jpg", $author->getImage());
         $this->assertEquals("Écrivain et poète", $author->getBiography());
     }

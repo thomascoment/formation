@@ -9,7 +9,6 @@
 declare(strict_types=1);
 
 $router = new AltoRouter();
-
 require_once ROOT_PATH . '/config/routes.php';
 
 $match = $router->match();

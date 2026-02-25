@@ -21,7 +21,7 @@ class PDOSingleton
     public static function getInstance(): \PDO
     {
         if(self::$instance === null) {
-            self::$instance = new \PDO('mysql:host=localhost;dbname=ecf2', 'root', '');
+            self::$instance = new \PDO('mysql:host=localhost;dbname=ecf2', 'thomas', 'toto2499');
             self::$instance->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             self::$instance->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
         }

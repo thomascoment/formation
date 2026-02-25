@@ -61,7 +61,7 @@ class QuoteTest extends TestCase
         $this->assertEquals(1, $quote->getId());
         $this->assertEquals("Un jour sans rire est un jour perdu.", $quote->getQuote());
         $this->assertEquals("Importance du sourire", $quote->getExplanation());
-        $this->assertNull($quote->getAuthor_id());
+        $this->assertNull($quote->getAuthorId());
     }
 
     /**

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Model\Repository;
 
-use React\Dns\Query\Query;
 use App\Model\Entity\Author;
 use App\Model\Entity\Quote;
 
@@ -23,17 +22,15 @@ LEFT JOIN author ON author.id = quote.author_id';
         $result = $q->fetchAll();
 
         $quotes = [];
-        foreach ($result as $row){
+        foreach ($result as $row) {
             $author = new Author();
-            if($row['author_id'] !== null){
+            if ($row['author_id'] !== null) {
                 $author->hydrate([
                     'id' => $row['author_id'],
                     'author' => $row['author']
                 ]);
 
-            
-            // Comment qu'on fait si author anonyme
-        }
+            }
             $quote = new Quote();
             $quote->hydrate([
                 'id' => $row['id'],
@@ -44,7 +41,5 @@ LEFT JOIN author ON author.id = quote.author_id';
             $quotes[] = $quote;
         }
         return $quotes;
-        
     }
-
 }
